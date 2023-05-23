@@ -36,7 +36,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField GridPane.columnIndex="1" />
+                  <TextField GridPane.columnIndex="1" fx:id="movieTitleInput" />
+
                   <Label text="Tytuł filmu" />
                   <Label text="Czas trwania" GridPane.rowIndex="1" />
                   <Label text="Ocena" GridPane.rowIndex="2" />
@@ -44,12 +45,12 @@
                   <Label text="Opis filmu" GridPane.rowIndex="4" />
                   <Label text="Gatunek filmu" GridPane.rowIndex="5" />
                   <Label text="Cena biletu" GridPane.rowIndex="6" />
-                  <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Button mnemonicParsing="false" text="Wczytaj okładke" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="movieGenreInput"/>
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="movieScoreInput"/>
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="moviePriceInput"/>
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="movieLengthInput"/>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="movieDescInput"/>
+                  <Button mnemonicParsing="false" text="Wczytaj okładke" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="movieCoverButton"/>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -85,3 +86,4 @@
       </AnchorPane>
    </children>
 </AnchorPane>
+
