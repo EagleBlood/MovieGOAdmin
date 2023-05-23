@@ -1,16 +1,13 @@
 package org.example;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class MovieGoLoginController {
+public class LoginController {
 
     @FXML
     private TextField inputUser;
