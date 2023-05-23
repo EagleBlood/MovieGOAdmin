@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -14,6 +15,8 @@ public class LoginController {
 
     @FXML
     private TextField inputUser;
+    @FXML
+    private Label errorMsg;
     @FXML
     private PasswordField inputPass;
     @FXML
@@ -43,7 +46,7 @@ public class LoginController {
             App.setRoot("home");
             connection.close(); // Close the connection when you're done
         } catch (SQLException e) {
-            System.out.println("GUNWOOOOOOOOOOOOOOOOOO!!11!!");
+            errorMsg.setText("Błąd podczas logowania!");
             e.printStackTrace();
         }
 
