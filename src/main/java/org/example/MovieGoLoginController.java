@@ -31,21 +31,21 @@ public class MovieGoLoginController {
     }
 
     private void connectJDBC() throws IOException {
-        String dbUrl = "jdbc:mysql://w10.domenomania.eu/wiktor10_kino";
-        String username = inputUser.getText();
-        String password = inputPass.getText();
+//        String dbUrl = "jdbc:mysql://w10.domenomania.eu/wiktor10_kino";
+//        String username = inputUser.getText();
+//        String password = inputPass.getText();
+//
+//        try {
+//            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+//            // Connection successful, perform database operations here
+//            System.out.println("Success");
+//            connection.close(); // Close the connection when you're done
+//        } catch (SQLException e) {
+//            System.out.println("GUNWOOOOOOOOOOOOOOOOOO!!11!!");
+//            e.printStackTrace();
+//        }
 
-        try {
-            Connection connection = DriverManager.getConnection(dbUrl, username, password);
-            // Connection successful, perform database operations here
-            System.out.println("Success");
-            connection.close(); // Close the connection when you're done
-        } catch (SQLException e) {
-            System.out.println("GUNWOOOOOOOOOOOOOOOOOO!!11!!");
-            e.printStackTrace();
-        }
 
-
-//        App.setRoot("home");
+        App.setRoot("home");
     }
 }
