@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="database connection">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TicketsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/deleteUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/tickets.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +68,7 @@
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="MovieGOAdmin" />
+      <module name="MovieGoAdmin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -107,7 +95,10 @@
       <updated>1684229507988</updated>
       <workItem from="1684229512324" duration="990000" />
       <workItem from="1684309767034" duration="6979000" />
-      <workItem from="1684317523975" duration="886000" />
+      <workItem from="1684317523975" duration="1733000" />
+      <workItem from="1684424437836" duration="424000" />
+      <workItem from="1684828209943" duration="763000" />
+      <workItem from="1684828984405" duration="3832000" />
     </task>
     <task id="LOCAL-00001" summary="Creation">
       <created>1684229583048</created>
@@ -166,6 +157,7 @@
     <MESSAGE value="Basic DB connection" />
     <MESSAGE value="UI adjust" />
     <MESSAGE value="database connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="database connection" />
+    <MESSAGE value="hotfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix" />
   </component>
 </project>
