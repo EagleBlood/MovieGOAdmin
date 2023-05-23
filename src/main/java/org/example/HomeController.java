@@ -35,6 +35,31 @@ public class HomeController {
         App.setRoot("addMovie");
     }
 
+    @FXML
+    private void editMovie() throws IOException {
+        App.setRoot("editMovie");
+    }
+
+    @FXML
+    private void removeMovie() throws IOException {
+        App.setRoot("removeMovie");
+    }
+
+    @FXML
+    private void deleteUser() throws IOException {
+        App.setRoot("deleteUser");
+    }
+
+    @FXML
+    private void showTickets() throws IOException {
+        App.setRoot("tickets");
+    }
+
+    @FXML
+    private void showTransactions() throws IOException {
+        App.setRoot("transactions");
+    }
+
 }
 
 
