@@ -1,11 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddMovieController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.HomeController">
    <children>
-      <Button fx:id="backButton" layoutX="87.0" layoutY="495.0" mnemonicParsing="false" text="Back" />
+      <AnchorPane layoutX="260.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="640.0">
+         <children>
+            <GridPane prefHeight="600.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField GridPane.columnIndex="1" />
+                  <Label text="Tytuł filmu" />
+                  <Label text="Czas trwania" GridPane.rowIndex="1" />
+                  <Label text="Ocena" GridPane.rowIndex="2" />
+                  <Label text="Okładka filmu" GridPane.rowIndex="3" />
+                  <Label text="Opis filmu" GridPane.rowIndex="4" />
+                  <Label text="Gatunek filmu" GridPane.rowIndex="5" />
+                  <Label text="Cena biletu" GridPane.rowIndex="6" />
+                  <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" text="Wczytaj okładke" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #ffffff08;" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button id="backButton" fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
+            <ImageView fitHeight="190.0" fitWidth="184.0" layoutX="38.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/logo.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="73.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MovieGO">
+               <styleClass>
+                  <String fx:value="h1" />
+                  <String fx:value="text" />
+               </styleClass>
+            </Text>
+            <Text layoutX="92.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="CENTER">
+               <styleClass>
+                  <String fx:value="h1" />
+                  <String fx:value="text" />
+               </styleClass>
+            </Text>
+            <Button layoutX="55.0" layoutY="415.0" mnemonicParsing="false" text="Wyślij do DB" />
+         </children>
+         <padding>
+            <Insets bottom="140.0" left="50.0" right="50.0" top="140.0" />
+         </padding>
+      </AnchorPane>
    </children>
 </AnchorPane>
