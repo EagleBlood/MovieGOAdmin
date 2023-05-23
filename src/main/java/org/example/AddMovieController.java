@@ -40,7 +40,7 @@ public class AddMovieController {
     @FXML
     private TextField moviePriceInput;
     @FXML
-    private TextArea movieDescInput;
+    private TextField movieDescInput;
 
 
 
