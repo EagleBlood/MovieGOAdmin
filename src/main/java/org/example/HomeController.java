@@ -27,7 +27,7 @@ public class HomeController {
 
     @FXML
     private void logout() throws IOException {
-        App.setRoot("movieGoLogin");
+        App.setRoot("login");
     }
 
     @FXML
