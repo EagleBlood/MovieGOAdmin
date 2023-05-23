@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="addMovie id's addon">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginCredentials.java" afterDir="false" />
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="Proper login functionality, DB add movie functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684835652692</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Proper login functionality, DB add movie functionality">
+      <created>1684843982888</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684843982888</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +188,7 @@
     <MESSAGE value="hotfix" />
     <MESSAGE value="addMovie layout v1" />
     <MESSAGE value="addMovie id's addon" />
-    <option name="LAST_COMMIT_MESSAGE" value="addMovie id's addon" />
+    <MESSAGE value="Proper login functionality, DB add movie functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proper login functionality, DB add movie functionality" />
   </component>
 </project>
