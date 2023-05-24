@@ -1,6 +1,6 @@
 package org.example;
 
-public class Movie {
+public class MovieDetailsAdapter {
     private int id_filmu;
     private String tytul;
     private int czas_trwania;
@@ -10,7 +10,7 @@ public class Movie {
     private byte[] okladka = null;
     private double cena;
 
-    public Movie(int id_filmu, String tytul, int czas_trwania, double ocena, String opis, int id_gatunku, byte[] okladka, double cena) {
+    public MovieDetailsAdapter(int id_filmu, String tytul, int czas_trwania, double ocena, String opis, int id_gatunku, byte[] okladka, double cena) {
         this.id_filmu = id_filmu;
         this.tytul = tytul;
         this.czas_trwania = czas_trwania;

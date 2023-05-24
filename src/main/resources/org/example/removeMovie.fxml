@@ -30,9 +30,13 @@
                   <ChoiceBox fx:id="choiceMovieTitle" prefWidth="150.0" />
                   <Label text="Wybierz film z listy który chcesz usunąć z bazy danych">
                      <padding>
-                        <Insets bottom="20.0" top="20.0" />
+                        <Insets bottom="40.0" top="20.0" />
                      </padding></Label>
-                  <TextArea fx:id="textAreaMovieDesc" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                  <TextArea fx:id="textAreaMovieDesc" editable="false" prefHeight="358.0" prefWidth="480.0" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="60.0" right="60.0" />
+                     </VBox.margin>
+                  </TextArea>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />
