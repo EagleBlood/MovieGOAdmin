@@ -44,4 +44,78 @@ VBox, AnchorPane {
 
 }
 
+.table-view {
+    -fx-background-color: #141217;
+    -fx-border-color: #141217;
+}
+
+.table-view .column-header, .table-view .column-header-background {
+    -fx-background-color: #FC094B;
+    /* -fx-text-fill: white; */
+    -fx-border-color: #FC094B;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #ffffff10;
+    -fx-background-color: #141217;
+    -fx-border-width: 0 1 1 0;
+    /* -fx-text-fill: white; */
+}
+
+.table-view .table-row-cell:selected {
+    /* -fx-background-color: darkgray; */
+    -fx-background-color: #FC094B;
+}
+
+.table-view .cell {
+    -fx-text-fill: white;
+    -fx-border-color: #ffffff10;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: white;
+}
+
+.table-view .scroll-bar:vertical .increment-button, .table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: black;
+    -fx-background-insets: 0, 0, 1;
+}
+
+.choice-box {
+    -fx-background-color: #141217;
+    -fx-border-color: #B8B8B8;
+    -fx-padding: 7 10;
+    -fx-border-radius: 5;
+}
+
+.choice-box .text {
+    -fx-text-fill: white;
+}
+
+.choice-box .arrow {
+    -fx-background-color: white;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: black;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: #FC094B;
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: white;
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: black;
+}
+
+
+
 

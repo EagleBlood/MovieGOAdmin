@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,11 @@ public class EditMovieController {
             tableDB.setItems(FXCollections.observableArrayList(movieList));
         });
 
+    }
+
+    @FXML
+    private void backHome() throws IOException {
+        App.setRoot("home");
     }
 
     private List<Movie> retrieveMoviesFromDatabase() {

@@ -53,13 +53,13 @@
                         <Label text="Gatunek filmu" GridPane.rowIndex="5" />
                         <Label text="Cena biletu" GridPane.rowIndex="6" />
       
-                              <TextField fx:id="movieTitleInput" GridPane.columnIndex="1" />
+                              <TextField fx:id="movieTitleInput" styleClass="inputTextField" GridPane.columnIndex="1" />
                         <ChoiceBox fx:id="movieGenreInput" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Button fx:id="movieCoverButton" minHeight="28.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="410.0" text="Wczytaj okładke" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="movieLengthInput" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="movieScoreInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="moviePriceInput" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <TextField fx:id="movieDescInput" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="movieLengthInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="movieScoreInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="moviePriceInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="movieDescInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -74,7 +74,7 @@
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #ffffff08;" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="backButton" fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
+            <Button id="backButton" fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" onAction="#backHome" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
             <ImageView fitHeight="190.0" fitWidth="184.0" layoutX="38.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/logo.png" />

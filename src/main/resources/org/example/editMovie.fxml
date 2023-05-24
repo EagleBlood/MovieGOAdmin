@@ -26,7 +26,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Text>
-                  <TableView fx:id="tableDB" editable="true" prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="tableDB" editable="true" fixedCellSize="0.0" prefHeight="453.0" prefWidth="600.0">
                     <columns>
                         <TableColumn fx:id="id_filmuCol" prefWidth="75.0" text="id_filmu" />
                         <TableColumn fx:id="tytulCol" prefWidth="75.0" text="tytul" />
@@ -37,6 +37,9 @@
                         <TableColumn fx:id="okladkaCol" editable="false" prefWidth="75.0" text="okladka" />
                         <TableColumn fx:id="cenaCol" prefWidth="75.0" text="cena" />
                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                   </TableView>
                </children>
                <padding>
@@ -68,7 +71,7 @@
                <children>
                   <Button fx:id="buttonSendData" mnemonicParsing="false" text="Wyślij dane do DB" />
                   <Button fx:id="buttonLoadData" mnemonicParsing="false" text="Wczytaj dane z DB" />
-                  <Button id="backButton" fx:id="buttonBackHome" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
+                  <Button id="backButton" fx:id="buttonBackHome" mnemonicParsing="false" onAction="#backHome" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
                </children>
             </VBox>
          </children>

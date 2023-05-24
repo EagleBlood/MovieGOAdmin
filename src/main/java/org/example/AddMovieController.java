@@ -77,7 +77,7 @@ public class AddMovieController {
     }
 
     @FXML
-    private void logout() throws IOException {
+    private void backHome() throws IOException {
         App.setRoot("home");
     }
 
