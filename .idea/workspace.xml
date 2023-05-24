@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="rename login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="MovieGOAdmin" />
+      <module name="MovieGoAdmin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -111,6 +107,8 @@
       <workItem from="1684424437836" duration="424000" />
       <workItem from="1684828209943" duration="763000" />
       <workItem from="1684828984405" duration="3832000" />
+      <workItem from="1684856216820" duration="51000" />
+      <workItem from="1684920217198" duration="1996000" />
     </task>
     <task id="LOCAL-00001" summary="Creation">
       <created>1684229583048</created>
@@ -182,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684849828915</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="editMovie.fxml almost done, removeMovie.fxml started">
+      <created>1684856258398</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684856258398</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +215,7 @@
     <MESSAGE value="Proper login functionality, DB add movie functionality" />
     <MESSAGE value="small adjustments in login.fxml" />
     <MESSAGE value="more adjustments in login.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="more adjustments in login.fxml" />
+    <MESSAGE value="editMovie.fxml almost done, removeMovie.fxml started" />
+    <option name="LAST_COMMIT_MESSAGE" value="editMovie.fxml almost done, removeMovie.fxml started" />
   </component>
 </project>

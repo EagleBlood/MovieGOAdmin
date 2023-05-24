@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.HomeController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.HomeController">
    <children>
     <AnchorPane layoutX="260.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="640.0">
          <children>
@@ -25,7 +30,7 @@
                <children>
                   <Pane fx:id="buttonAddMovie" accessibleRole="BUTTON" onMouseClicked="#addMovie" prefHeight="184.0" prefWidth="164.0" styleClass="actionItem" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Text layoutX="46.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add movie">
+                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj film" textAlignment="CENTER" wrappingWidth="168.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -41,7 +46,7 @@
                   </Pane>
                   <Pane onMouseClicked="#editMovie" prefHeight="200.0" prefWidth="185.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1">
                      <children>
-                        <Text layoutX="47.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit movie">
+                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj film" textAlignment="CENTER" wrappingWidth="168.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -57,7 +62,7 @@
                   </Pane>
                   <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" onMouseClicked="#removeMovie" prefHeight="55.0" prefWidth="55.0" styleClass="actionItem" GridPane.columnIndex="2">
                      <children>
-                        <Text layoutX="31.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove movie">
+                        <Text layoutX="1.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń film" textAlignment="CENTER" wrappingWidth="167.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -73,7 +78,7 @@
                   </Pane>
                   <Pane accessibleRole="BUTTON" onMouseClicked="#deleteUser" prefHeight="184.0" prefWidth="164.0" styleClass="actionItem" GridPane.rowIndex="1">
                      <children>
-                        <Text layoutX="13.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete user account">
+                        <Text layoutX="1.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń użytkownika" textAlignment="CENTER" wrappingWidth="167.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -89,7 +94,7 @@
                   </Pane>
                   <Pane onMouseClicked="#showTickets" prefHeight="200.0" prefWidth="185.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Text layoutX="59.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tickets">
+                        <Text layoutX="-3.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ustaw seans" textAlignment="CENTER" wrappingWidth="174.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -105,7 +110,7 @@
                   </Pane>
                   <Pane onMouseClicked="#showTransactions" prefHeight="208.0" prefWidth="175.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <Text layoutX="39.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transactions">
+                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transakcje" textAlignment="CENTER" wrappingWidth="167.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
@@ -125,7 +130,7 @@
       </AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #ffffff08;" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Log out" />
+            <Button fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Wyloguj" />
             <ImageView fitHeight="190.0" fitWidth="184.0" layoutX="38.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/logo.png" />
