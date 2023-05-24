@@ -19,23 +19,23 @@ public class EditMovieController {
     private String password = LoginCredentials.getPassword();
 
     @FXML
-    private TableView<Movie> tableDB;
+    private TableView<MovieDetailsAdapter> tableDB;
     @FXML
-    private TableColumn<Movie, Integer> id_filmuCol;
+    private TableColumn<MovieDetailsAdapter, Integer> id_filmuCol;
     @FXML
-    private TableColumn<Movie, String> tytulCol;
+    private TableColumn<MovieDetailsAdapter, String> tytulCol;
     @FXML
-    private TableColumn<Movie, Integer> czas_trwaniaCol;
+    private TableColumn<MovieDetailsAdapter, Integer> czas_trwaniaCol;
     @FXML
-    private TableColumn<Movie, Double> ocenaCol;
+    private TableColumn<MovieDetailsAdapter, Double> ocenaCol;
     @FXML
-    private TableColumn<Movie, String> opisCol;
+    private TableColumn<MovieDetailsAdapter, String> opisCol;
     @FXML
-    private TableColumn<Movie, Integer> id_gatunkuCol;
+    private TableColumn<MovieDetailsAdapter, Integer> id_gatunkuCol;
     @FXML
-    private TableColumn<Movie, Byte[]> okladkaCol;
+    private TableColumn<MovieDetailsAdapter, Byte[]> okladkaCol;
     @FXML
-    private TableColumn<Movie, Double> cenaCol;
+    private TableColumn<MovieDetailsAdapter, Double> cenaCol;
     @FXML
     private Button buttonLoadData;
 
@@ -54,8 +54,8 @@ public class EditMovieController {
         cenaCol.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
         buttonLoadData.setOnAction(event -> {
-            List<Movie> movieList = retrieveMoviesFromDatabase();
-            tableDB.setItems(FXCollections.observableArrayList(movieList));
+            List<MovieDetailsAdapter> movieDetailsAdapterList = retrieveMoviesFromDatabase();
+            tableDB.setItems(FXCollections.observableArrayList(movieDetailsAdapterList));
         });
 
     }
@@ -65,8 +65,8 @@ public class EditMovieController {
         App.setRoot("home");
     }
 
-    private List<Movie> retrieveMoviesFromDatabase() {
-        List<Movie> movieList = new ArrayList<>();
+    private List<MovieDetailsAdapter> retrieveMoviesFromDatabase() {
+        List<MovieDetailsAdapter> movieDetailsAdapterList = new ArrayList<>();
 
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
@@ -84,8 +84,8 @@ public class EditMovieController {
                 byte[] okladka = resultSet.getString("okladka").getBytes();
                 double cena = resultSet.getDouble("cena");
 
-                Movie movie = new Movie(id_filmu, tytul, czas_trwania, ocena, opis, id_gatunku, okladka, cena);
-                movieList.add(movie);
+                MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(id_filmu, tytul, czas_trwania, ocena, opis, id_gatunku, okladka, cena);
+                movieDetailsAdapterList.add(movieDetailsAdapter);
 
                 System.out.println("Dodano rekord");
             }
@@ -99,6 +99,6 @@ public class EditMovieController {
         }
 
         System.out.println("Koniec");
-        return movieList;
+        return movieDetailsAdapterList;
     }
 }
