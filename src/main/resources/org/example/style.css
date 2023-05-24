@@ -51,7 +51,6 @@ VBox, AnchorPane {
 
 .table-view .column-header, .table-view .column-header-background {
     -fx-background-color: #FC094B;
-    /* -fx-text-fill: white; */
     -fx-border-color: #FC094B;
 }
 
@@ -63,11 +62,9 @@ VBox, AnchorPane {
     -fx-border-color: #ffffff10;
     -fx-background-color: #141217;
     -fx-border-width: 0 1 1 0;
-    /* -fx-text-fill: white; */
 }
 
 .table-view .table-row-cell:selected {
-    /* -fx-background-color: darkgray; */
     -fx-background-color: #FC094B;
 }
 

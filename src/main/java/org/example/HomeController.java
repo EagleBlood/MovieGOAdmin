@@ -52,7 +52,7 @@ public class HomeController {
 
     @FXML
     private void showTickets() throws IOException {
-        App.setRoot("tickets");
+        App.setRoot("filmShow");
     }
 
     @FXML
