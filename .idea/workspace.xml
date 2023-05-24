@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="changed styles">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieAdapter.java" afterDir="false" />
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="film show">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieDetailsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

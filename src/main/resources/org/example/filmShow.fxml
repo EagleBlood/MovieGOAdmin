@@ -1,14 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.FilmShowController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FilmShowController">
+    <children>
+        <AnchorPane layoutX="260.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="640.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="600.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzanie seansami" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="491.60699462890625">
+                            <styleClass>
+                                <String fx:value="h1" />
+                                <String fx:value="text" />
+                            </styleClass>
+                            <VBox.margin>
+                                <Insets bottom="40.0" />
+                            </VBox.margin>
+                        </Text>
+                  <TabPane focusTraversable="false" prefHeight="407.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Dodaj seans">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="600.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="364.0" prefWidth="600.0" style="-fx-background-color: #ffffff08; -fx-background-radius: 10;">
+                                       <children>
+                                          <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj seans do bazy danych" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="491.60699462890625">
+                                             <styleClass>
+                                                <String fx:value="h1" />
+                                                <String fx:value="text" />
+                                             </styleClass>
+                                             <VBox.margin>
+                                                <Insets bottom="40.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <GridPane alignment="CENTER" hgap="30.0" prefHeight="133.0" prefWidth="600.0" vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="236.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="425.0" minWidth="10.0" prefWidth="334.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                      <ChoiceBox fx:id="addMovieList" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                                                <Label text="Wybierz film" GridPane.halignment="RIGHT" />
+                                                <Label text="Wybierz datę" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                                <DatePicker fx:id="addDateInput" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="Wybierz porę emisji" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="addTimeList" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                             </VBox.margin>
+                                          </GridPane>
+                                          <Button fx:id="addMovieShow" mnemonicParsing="false" text="Dodaj do DB" />
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Edytuj seans">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="365.0" prefWidth="600.0" style="-fx-background-color: #ffffff08; -fx-background-radius: 10;">
+                                       <children>
+                                          <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj seans z bazy danych" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="491.60699462890625">
+                                             <styleClass>
+                                                <String fx:value="h1" />
+                                                <String fx:value="text" />
+                                             </styleClass>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <GridPane alignment="CENTER" hgap="30.0" prefHeight="182.0" prefWidth="560.0" vgap="10.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="264.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="425.0" minWidth="10.0" prefWidth="266.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="editMovieList" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Wybierz film" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                <Label text="Zmień datę" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                                <DatePicker fx:id="editDateInput" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="Zmień porę emisji" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                                <ChoiceBox fx:id="editTimeList" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <Label text="Wybierz seans, który chcesz edytować" GridPane.halignment="RIGHT" />
+                                                <ChoiceBox fx:id="editMovieShowList" prefWidth="200.0" GridPane.columnIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <Button fx:id="editMovieShow" mnemonicParsing="false" text="Edytuj seans">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Usuń seans">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="365.0" prefWidth="600.0" style="-fx-background-color: #ffffff08; -fx-background-radius: 10;">
+                                       <children>
+                                          <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń seans z bazy danych" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="491.60699462890625">
+                                             <styleClass>
+                                                <String fx:value="h1" />
+                                                <String fx:value="text" />
+                                             </styleClass>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <ChoiceBox fx:id="removeMovieShowList" prefWidth="200.0" />
+                                          <Label text="Wybierz z listy seans, który chcesz usunąć z bazy danych">
+                                             <padding>
+                                                <Insets bottom="20.0" top="20.0" />
+                                             </padding>
+                                          </Label>
+                                          <Button fx:id="removeMovieShow" mnemonicParsing="false" text="Usuń seans" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #ffffff08;" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="190.0" fitWidth="184.0" layoutX="38.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@icons/logo.png" />
+                    </image>
+                </ImageView>
+                <Text layoutX="73.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MovieGO">
+                    <styleClass>
+                        <String fx:value="h1" />
+                        <String fx:value="text" />
+                    </styleClass>
+                </Text>
+                <Text layoutX="92.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="CENTER">
+                    <styleClass>
+                        <String fx:value="h1" />
+                        <String fx:value="text" />
+                    </styleClass>
+                </Text>
+                <Button id="backButton" fx:id="buttonBackHome" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" onAction="#backHome" prefHeight="33.0" prefWidth="104.0" text="Powrót" />
+            </children>
+            <padding>
+                <Insets bottom="140.0" left="50.0" right="50.0" top="140.0" />
+            </padding>
+        </AnchorPane>
+    </children>
 </AnchorPane>
