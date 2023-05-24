@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="rename login">
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="changed styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/tickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684849828915</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed styles">
+      <created>1684923346775</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684923346775</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +214,7 @@
     <MESSAGE value="Proper login functionality, DB add movie functionality" />
     <MESSAGE value="small adjustments in login.fxml" />
     <MESSAGE value="more adjustments in login.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="more adjustments in login.fxml" />
+    <MESSAGE value="changed styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed styles" />
   </component>
 </project>
