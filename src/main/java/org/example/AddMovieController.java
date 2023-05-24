@@ -66,8 +66,6 @@ public class AddMovieController {
         //List
         retrieveGenreNamesFromDatabase();
         movieGenreInput.setItems(genreList);
-            //Get ID genre
-
 
         //DB action
         buttonSendToDB.setOnAction(event -> {
