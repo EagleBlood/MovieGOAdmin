@@ -26,7 +26,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Text>
-                  <TableView fx:id="tableDB" editable="true" fixedCellSize="0.0" prefHeight="453.0" prefWidth="600.0">
+                  <TableView fx:id="tableDB" editable="true" prefHeight="453.0" prefWidth="600.0" styleClass="my-table-view">
                     <columns>
                         <TableColumn fx:id="id_filmuCol" prefWidth="75.0" text="id_filmu" />
                         <TableColumn fx:id="tytulCol" prefWidth="75.0" text="tytul" />

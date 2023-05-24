@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="film show">
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="delete user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/deleteUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/deleteUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684923346775</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="delete user">
+      <created>1684934959283</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684934959283</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +224,7 @@
     <MESSAGE value="more adjustments in login.fxml" />
     <MESSAGE value="changed styles" />
     <MESSAGE value="editMovie.fxml almost done, removeMovie.fxml started" />
-    <option name="LAST_COMMIT_MESSAGE" value="editMovie.fxml almost done, removeMovie.fxml started" />
+    <MESSAGE value="delete user" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete user" />
   </component>
 </project>
