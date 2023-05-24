@@ -10,6 +10,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/tickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684849828915</updated>
     </task>
+    <task id="LOCAL-00011" summary="editMovie.fxml almost done, removeMovie.fxml started">
+      <created>1684856258398</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684856258398</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <task id="LOCAL-00011" summary="changed styles">
       <created>1684923346775</created>
       <option name="number" value="00011" />
@@ -216,5 +227,7 @@
     <MESSAGE value="more adjustments in login.fxml" />
     <MESSAGE value="changed styles" />
     <option name="LAST_COMMIT_MESSAGE" value="changed styles" />
+    <MESSAGE value="editMovie.fxml almost done, removeMovie.fxml started" />
+    <option name="LAST_COMMIT_MESSAGE" value="editMovie.fxml almost done, removeMovie.fxml started" />
   </component>
 </project>
