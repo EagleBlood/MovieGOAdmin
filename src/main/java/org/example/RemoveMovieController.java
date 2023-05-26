@@ -25,10 +25,8 @@ public class RemoveMovieController {
 
     @FXML
     private ChoiceBox<MovieAdapter> choiceMovieTitle;
-
     @FXML
     private TextArea textAreaMovieDesc;
-
     @FXML
     private Button buttonRemoveData;
 
@@ -62,18 +60,15 @@ public class RemoveMovieController {
             Optional<ButtonType> result = confirmationDialog.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
 
-                //TODO
-                /* złapać albo naprawić błąd który wydupca po czyszczeniu listy */
-                choiceMovieTitle.getItems().clear();
-
                 deleteMovieFromDatabase(selectedId);
+                choiceMovieTitle.getItems().clear();
+                populateMovieTitles();
+
                 Stage popupStage = new Stage();
                 popupStage.initModality(Modality.APPLICATION_MODAL);
 
                 Label messageLabel = new Label("Film został usunięty!");
                 showPopup(popupStage, messageLabel);
-
-                populateMovieTitles();
             }
         });
     }
