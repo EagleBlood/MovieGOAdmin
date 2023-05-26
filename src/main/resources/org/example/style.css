@@ -19,8 +19,15 @@ VBox, AnchorPane {
     -fx-background-color: #141217;
 }
 
+.text-area .content{
+    -fx-background-color: #ffffff00;
+    -fx-text-fill: white;
+    -fx-padding: 0;
+    -fx-text-align: center;
+}
+
 .inputTextField {
-    -fx-background-color: #141217;
+    -fx-background-color: #ffffff00;
     -fx-border-color: #B8B8B8;
     -fx-padding: 10;
     -fx-border-radius: 5;
@@ -45,8 +52,9 @@ VBox, AnchorPane {
 }
 
 .my-table-view {
-    -fx-background-color: #141217;
-    -fx-border-color: #141217;
+    -fx-background-color: #ffffff00;
+    -fx-border-color: #ffffff10;
+    -fx-border-width: 0 0 2 0;
 }
 
 .my-table-view .column-header, .table-view .column-header-background {
@@ -60,7 +68,7 @@ VBox, AnchorPane {
 
 .my-table-view .table-row-cell {
     -fx-border-color: #ffffff10;
-    -fx-background-color: #141217;
+    -fx-background-color: #ffffff00;
     -fx-border-width: 0 1 1 0;
 }
 
@@ -83,7 +91,7 @@ VBox, AnchorPane {
 }
 
 .choice-box {
-    -fx-background-color: #141217;
+    -fx-background-color: #ffffff00;
     -fx-border-color: #B8B8B8;
     -fx-padding: 7 10;
     -fx-border-radius: 5;
@@ -114,7 +122,7 @@ VBox, AnchorPane {
 }
 
 .date-picker {
-    -fx-background-color: #141217;
+    -fx-background-color: #ffffff00;
     -fx-border-radius: 5;
     -fx-text-fill: white;
     -fx-border-color: #B8B8B8;
@@ -127,7 +135,7 @@ VBox, AnchorPane {
 }
 
 .date-picker > .text-field {
-    -fx-background-color: #141217;
+    -fx-background-color: #ffffff00;
     -fx-text-fill: white;
     -fx-padding: 10;
 }
@@ -193,6 +201,14 @@ VBox, AnchorPane {
     -fx-background-color: #141217;
     -fx-padding: 0;
 
+}
+
+.vbox {
+    -fx-background-color: black;
+}
+
+.label {
+    -fx-text-fill: white;
 }
 
 
