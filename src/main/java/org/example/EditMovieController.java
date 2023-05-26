@@ -51,7 +51,7 @@ public class EditMovieController {
         cenaCol.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
         buttonLoadData.setOnAction(event -> {
-            List<MovieDetailsAdapter> movieDetailsAdapterList = retrieveMoviesFromDatabase();
+            List<MovieDetailsAdapter> movieDetailsAdapterList = retrieveMoviesFromDB();
             tableDB.setItems(FXCollections.observableArrayList(movieDetailsAdapterList));
         });
 
@@ -62,7 +62,7 @@ public class EditMovieController {
         App.setRoot("home");
     }
 
-    private List<MovieDetailsAdapter> retrieveMoviesFromDatabase() {
+    private List<MovieDetailsAdapter> retrieveMoviesFromDB() {
         List<MovieDetailsAdapter> movieDetailsAdapterList = new ArrayList<>();
 
         try {
@@ -90,7 +90,6 @@ public class EditMovieController {
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the database error gracefully
         }
 
         System.out.println("Koniec");

@@ -123,7 +123,7 @@ public class RemoveMovieController {
         return movieDescription;
     }
 
-    private List<MovieAdapter> retrieveMovieTitlesFromDatabase() {
+    public List<MovieAdapter> retrieveMovieTitlesFromDatabase() {
         List<MovieAdapter> movieTitles = new ArrayList<>();
 
         try {
