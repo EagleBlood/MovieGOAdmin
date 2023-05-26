@@ -21,19 +21,15 @@ public class EditMovieController {
     @FXML
     private TableView<MovieDetailsAdapter> tableDB;
     @FXML
-    private TableColumn<MovieDetailsAdapter, Integer> id_filmuCol;
-    @FXML
     private TableColumn<MovieDetailsAdapter, String> tytulCol;
     @FXML
-    private TableColumn<MovieDetailsAdapter, Integer> czas_trwaniaCol;
+    private TableColumn<MovieDetailsAdapter, Integer> czasTrwaniaCol;
     @FXML
     private TableColumn<MovieDetailsAdapter, Double> ocenaCol;
     @FXML
     private TableColumn<MovieDetailsAdapter, String> opisCol;
     @FXML
-    private TableColumn<MovieDetailsAdapter, Integer> id_gatunkuCol;
-    @FXML
-    private TableColumn<MovieDetailsAdapter, Byte[]> okladkaCol;
+    private TableColumn<MovieDetailsAdapter, Integer> gatCol;
     @FXML
     private TableColumn<MovieDetailsAdapter, Double> cenaCol;
     @FXML
@@ -44,13 +40,14 @@ public class EditMovieController {
     /* Edycja rekordów w bazie (funkcjonalność) */
 
     public void initialize() {
-        id_filmuCol.setCellValueFactory(new PropertyValueFactory<>("id_filmu"));
+
+        tableDB.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
         tytulCol.setCellValueFactory(new PropertyValueFactory<>("tytul"));
-        czas_trwaniaCol.setCellValueFactory(new PropertyValueFactory<>("czas_trwania"));
-        ocenaCol.setCellValueFactory(new PropertyValueFactory<>("ocena"));
         opisCol.setCellValueFactory(new PropertyValueFactory<>("opis"));
-        id_gatunkuCol.setCellValueFactory(new PropertyValueFactory<>("id_gatunku"));
-        okladkaCol.setCellValueFactory(new PropertyValueFactory<>("okladka"));
+        czasTrwaniaCol.setCellValueFactory(new PropertyValueFactory<>("czas_trwania"));
+        gatCol.setCellValueFactory(new PropertyValueFactory<>("nazwa_gatunku"));
+        ocenaCol.setCellValueFactory(new PropertyValueFactory<>("ocena"));
         cenaCol.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
         buttonLoadData.setOnAction(event -> {
@@ -71,23 +68,21 @@ public class EditMovieController {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM film");
+            ResultSet resultSet = statement.executeQuery("SELECT film.tytul, film.opis, film.czas_trwania, film.ocena, gatunek.nazwa_gatunku AS nazwa_gatunku, film.cena FROM film INNER JOIN gatunek ON film.id_gatunku=gatunek.id_gatunku;");
             System.out.println("Połączono");
 
             while (resultSet.next()) {
-                int id_filmu = resultSet.getInt("id_filmu");
                 String tytul = resultSet.getString("tytul");
+                String opis = resultSet.getString("opis");
                 int czas_trwania = resultSet.getInt("czas_trwania");
                 double ocena = resultSet.getDouble("ocena");
-                String opis = resultSet.getString("opis");
-                int id_gatunku = resultSet.getInt("id_gatunku");
-                byte[] okladka = resultSet.getString("okladka").getBytes();
+                String nazwa_gatunku = resultSet.getString("nazwa_gatunku");
                 double cena = resultSet.getDouble("cena");
 
-                MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(id_filmu, tytul, czas_trwania, ocena, opis, id_gatunku, okladka, cena);
+                MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(tytul, opis, czas_trwania, ocena, nazwa_gatunku, cena);
                 movieDetailsAdapterList.add(movieDetailsAdapter);
 
-                System.out.println("Dodano rekord");
+                System.out.println("Pobrano rekord");
             }
 
             resultSet.close();

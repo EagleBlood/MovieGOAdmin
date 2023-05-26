@@ -12,9 +12,6 @@ public class HomeController {
     private Button buttonLogout;
 
     @FXML
-    private Pane buttonAddMovie;
-
-    @FXML
     private void initialize() {
         buttonLogout.setOnAction(event -> {
             try {
@@ -52,7 +49,7 @@ public class HomeController {
 
     @FXML
     private void showTickets() throws IOException {
-        App.setRoot("filmShow");
+        App.setRoot("movieShowtime");
     }
 
     @FXML

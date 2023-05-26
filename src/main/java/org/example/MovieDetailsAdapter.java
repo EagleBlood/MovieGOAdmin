@@ -1,31 +1,20 @@
 package org.example;
 
 public class MovieDetailsAdapter {
-    private int id_filmu;
     private String tytul;
     private int czas_trwania;
     private double ocena;
     private String opis;
-    private int id_gatunku;
-    private byte[] okladka = null;
+    private String nazwa_gatunku;
     private double cena;
 
-    public MovieDetailsAdapter(int id_filmu, String tytul, int czas_trwania, double ocena, String opis, int id_gatunku, byte[] okladka, double cena) {
-        this.id_filmu = id_filmu;
+    public MovieDetailsAdapter(String tytul, String opis, int czas_trwania, double ocena, String nazwa_gatunku, double cena) {
         this.tytul = tytul;
         this.czas_trwania = czas_trwania;
         this.ocena = ocena;
         this.opis = opis;
-        this.id_gatunku = id_gatunku;
-        this.okladka = okladka;
+        this.nazwa_gatunku = nazwa_gatunku;
         this.cena = cena;
-    }
-    public int getId_filmu() {
-        return id_filmu;
-    }
-
-    public void setId_filmu(int id_filmu) {
-        this.id_filmu = id_filmu;
     }
 
     public String getTytul() {
@@ -60,20 +49,12 @@ public class MovieDetailsAdapter {
         this.opis = opis;
     }
 
-    public int getId_gatunku() {
-        return id_gatunku;
+    public String getNazwa_gatunku() {
+        return nazwa_gatunku;
     }
 
-    public void setId_gatunku(int id_gatunku) {
-        this.id_gatunku = id_gatunku;
-    }
-
-    public byte[] getOkladka() {
-        return okladka;
-    }
-
-    public void setOkladka(byte[] okladka) {
-        this.okladka = okladka;
+    public void setNazwa_gatunku(String nazwa_gatunku) {
+        this.nazwa_gatunku = nazwa_gatunku;
     }
 
     public double getCena() {

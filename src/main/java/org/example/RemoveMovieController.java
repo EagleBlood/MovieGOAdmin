@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.App;
@@ -26,7 +27,7 @@ public class RemoveMovieController {
     @FXML
     private ChoiceBox<MovieAdapter> choiceMovieTitle;
     @FXML
-    private TextArea textAreaMovieDesc;
+    private Text textAreaMovieDesc;
     @FXML
     private Button buttonRemoveData;
 
