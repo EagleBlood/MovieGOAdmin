@@ -44,10 +44,11 @@
                                           </Text>
                                           <TableView fx:id="tableDB" cacheHint="SPEED" nodeOrientation="LEFT_TO_RIGHT" prefHeight="453.0" prefWidth="600.0" styleClass="my-table-view">
                                              <columns>
-                                                <TableColumn fx:id="nrseansuCol" editable="false" minWidth="-1.0" prefWidth="75.0" text="Numer seansu" />
-                                                <TableColumn fx:id="filmCol" minWidth="-1.0" prefWidth="154.0" text="Film" />
+                                                <TableColumn fx:id="id_seansuCol" editable="false" minWidth="-1.0" prefWidth="75.0" text="Numer seansu" />
+                                                <TableColumn fx:id="id_filmuCol" minWidth="-1.0" prefWidth="154.0" text="Film" />
+                                                <TableColumn fx:id="id_salaCol" minWidth="-1.0" prefWidth="154.0" text="Sala" />
                                                 <TableColumn fx:id="dataCol" minWidth="-1.0" prefWidth="75.0" text="Data" />
-                                                <TableColumn fx:id="emisjaCol" minWidth="-1.0" prefWidth="75.0" text="Pora emisji" />
+                                                <TableColumn fx:id="pora_emisjiCol" minWidth="-1.0" prefWidth="75.0" text="Pora emisji" />
                                              </columns>
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -56,7 +57,7 @@
                                                 <Insets bottom="15.0" />
                                              </VBox.margin>
                                           </TableView>
-                                          <Button fx:id="addMovieShow1" mnemonicParsing="false" text="Pobierz dane z DB" />
+                                          <Button fx:id="buttonLoadDataMovieShowtime" mnemonicParsing="false" text="Pobierz dane z DB" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -92,18 +93,18 @@
                                                 <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                      <ChoiceBox fx:id="addMovieList" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                                                      <ChoiceBox fx:id="choiceAddMovieTitle" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" />
                                                 <Label text="Wybierz film" GridPane.halignment="RIGHT" />
                                                 <Label text="Wybierz datę" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                                                 <DatePicker fx:id="addDateInput" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                 <Label text="Wybierz porę emisji" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                                                <ChoiceBox fx:id="addTimeList" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="choiceAddTimeList" prefHeight="39.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets bottom="30.0" />
                                              </VBox.margin>
                                           </GridPane>
-                                          <Button fx:id="addMovieShow" mnemonicParsing="false" text="Dodaj do DB" />
+                                          <Button fx:id="addMovieShowButton" mnemonicParsing="false" text="Dodaj do DB" />
                                        </children>
                                     </VBox>
                                  </children></AnchorPane>
@@ -136,21 +137,21 @@
                                                 <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <ChoiceBox fx:id="editMovieList" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="choiceEditMovieTitle" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label text="Wybierz film" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                                                 <Label text="Zmień datę" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
                                                 <DatePicker fx:id="editDateInput" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                 <Label text="Zmień porę emisji" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                                                <ChoiceBox fx:id="editTimeList" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <ChoiceBox fx:id="choiceEditTimeList" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </ChoiceBox>
                                                 <Label text="Wybierz seans, który chcesz edytować" GridPane.halignment="RIGHT" />
-                                                <ChoiceBox fx:id="editMovieShowList" prefWidth="200.0" GridPane.columnIndex="1" />
+                                                <ChoiceBox fx:id="choiceEditMovieShowList" prefWidth="200.0" GridPane.columnIndex="1" />
                                              </children>
                                           </GridPane>
-                                          <Button fx:id="editMovieShow" mnemonicParsing="false" text="Edytuj seans">
+                                          <Button fx:id="editMovieShowButton" mnemonicParsing="false" text="Edytuj seans">
                                              <VBox.margin>
                                                 <Insets top="20.0" />
                                              </VBox.margin>
@@ -178,13 +179,13 @@
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
                                           </Text>
-                                          <ChoiceBox fx:id="removeMovieShowList" prefWidth="200.0" />
+                                          <ChoiceBox fx:id="choiceRemoveMovieShowList" prefWidth="200.0" />
                                           <Label text="Wybierz z listy seans, który chcesz usunąć z bazy danych">
                                              <padding>
                                                 <Insets bottom="20.0" top="20.0" />
                                              </padding>
                                           </Label>
-                                          <Button fx:id="removeMovieShow" mnemonicParsing="false" text="Usuń seans" />
+                                          <Button fx:id="removeMovieShowButton" mnemonicParsing="false" text="Usuń seans" />
                                        </children>
                                        <padding>
                                           <Insets left="20.0" right="20.0" />
