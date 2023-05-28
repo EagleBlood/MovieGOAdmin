@@ -11,6 +11,7 @@ public class HomeController {
     @FXML
     private Button buttonLogout;
 
+
     @FXML
     private void initialize() {
         buttonLogout.setOnAction(event -> {
@@ -28,18 +29,8 @@ public class HomeController {
     }
 
     @FXML
-    private void addMovie() throws IOException {
-        App.setRoot("addMovie");
-    }
-
-    @FXML
-    private void editMovie() throws IOException {
-        App.setRoot("editMovie");
-    }
-
-    @FXML
-    private void removeMovie() throws IOException {
-        App.setRoot("removeMovie");
+    private void movies() throws IOException {
+        App.setRoot("movies");
     }
 
     @FXML
@@ -48,7 +39,7 @@ public class HomeController {
     }
 
     @FXML
-    private void showTickets() throws IOException {
+    private void movieShowtime() throws IOException {
         App.setRoot("movieShowtime");
     }
 

@@ -1,4 +1,13 @@
 
+*{
+    -fx-bgcolor: #141217;
+    -fx-transparent-bgcolor: #ffffff00;
+    -fx-txt-w: white;
+    -fx-txt-b: black;
+    -fx-accent-color: #FC094B;
+    -fx-border-col: #B8B8B8;
+}
+
 .text {
     -fx-font-family: "Lato";
     -fx-fill: white;
@@ -16,28 +25,45 @@
 }
 
 VBox, AnchorPane {
-    -fx-background-color: #141217;
+    -fx-background-color: -fx-bgcolor;
 }
 
-.text-area .content{
-    -fx-background-color: #ffffff00;
+.text-area {
+    -fx-control-inner-background: -fx-bgcolor;
     -fx-text-fill: white;
-    -fx-padding: 0;
-    -fx-text-align: center;
+    -fx-border-radius: 5;
+    -fx-background-color: -fx-bgcolor;
+}
+
+.text-area .content {
+    -fx-cursor: text;
+    -fx-background-color: #1B191E;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-border-color: -fx-border-col;
+    -fx-border-radius: 5;
+}
+
+.text-area .scroll-pane {
+    -fx-cursor: text;
+    -fx-background-color:  #ffffff08;
+    -fx-border-radius: 5;
+    -fx-text-fill: white;
 }
 
 .inputTextField {
-    -fx-background-color: #ffffff00;
-    -fx-border-color: #B8B8B8;
+    -fx-cursor: text;
+    -fx-background-color: -fx-transparent-bgcolor;
+    -fx-border-color: -fx-border-col;
     -fx-padding: 10;
     -fx-border-radius: 5;
     -fx-text-fill: white;
-
 }
 
 .button {
-    -fx-background-color: #FC094B;
-    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-color: -fx-accent-color;
+    -fx-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 15;
     -fx-min-width: 150;
@@ -45,21 +71,41 @@ VBox, AnchorPane {
     -fx-min-height: 40;
 }
 
+.button:hover {
+    -fx-background-color: white;
+}
+
+.button:hover .text {
+    -fx-fill: -fx-accent-color;
+}
+
 .actionItem {
+    -fx-cursor: hand;
     -fx-background-color: #ADADAD90;
     -fx-background-radius: 10;
+}
+
+.actionItem:hover {
+    -fx-background-color: #ADADAD;
 
 }
 
+.image-view-wrapper: border {
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+
 .my-table-view {
-    -fx-background-color: #ffffff00;
-    -fx-border-color: #ffffff10;
+    -fx-background-color: -fx-transparent-bgcolor;
+    -fx-border-color: -fx-transparent-bgcolor;
     -fx-border-width: 0 0 2 0;
 }
 
 .my-table-view .column-header, .table-view .column-header-background {
-    -fx-background-color: #FC094B;
-    -fx-border-color: #FC094B;
+    -fx-background-color: -fx-accent-color;
+    -fx-border-color: -fx-accent-color;
 }
 
 .my-table-view .column-header .label {
@@ -68,12 +114,12 @@ VBox, AnchorPane {
 
 .my-table-view .table-row-cell {
     -fx-border-color: #ffffff10;
-    -fx-background-color: #ffffff00;
-    -fx-border-width: 0 1 1 0;
+    -fx-background-color: -fx-transparent-bgcolor;
+    -fx-border-width: 0 0 1 0;
 }
 
 .my-table-view .table-row-cell:selected {
-    -fx-background-color: #FC094B;
+    -fx-background-color: -fx-accent-color;
 }
 
 .my-table-view .cell {
@@ -91,8 +137,9 @@ VBox, AnchorPane {
 }
 
 .choice-box {
-    -fx-background-color: #ffffff00;
-    -fx-border-color: #B8B8B8;
+    -fx-cursor: hand;
+    -fx-background-color: -fx-transparent-bgcolor;
+    -fx-border-color: -fx-border-col;
     -fx-padding: 7 10;
     -fx-border-radius: 5;
 }
@@ -110,7 +157,8 @@ VBox, AnchorPane {
 }
 
 .choice-box .menu-item:focused {
-    -fx-background-color: #FC094B;
+    -fx-cursor: hand;
+    -fx-background-color: -fx-accent-color;
 }
 
 .choice-box .menu-item > .label {
@@ -122,36 +170,38 @@ VBox, AnchorPane {
 }
 
 .date-picker {
-    -fx-background-color: #ffffff00;
+    -fx-cursor: hand;
+    -fx-background-color: -fx-transparent-bgcolor;
     -fx-border-radius: 5;
     -fx-text-fill: white;
-    -fx-border-color: #B8B8B8;
+    -fx-border-color: -fx-border-col;
 }
 
 .date-picker > .arrow-button {
-    -fx-background-color: #B8B8B8;
-    -fx-border-color: #B8B8B8;
+    -fx-background-color: -fx-border-col;
+    -fx-border-color: -fx-border-col;
     -fx-border-radius: 1;
 }
 
 .date-picker > .text-field {
-    -fx-background-color: #ffffff00;
+    -fx-background-color: -fx-transparent-bgcolor;
     -fx-text-fill: white;
-    -fx-padding: 10;
+    -fx-padding: 10 15;
 }
 
 .date-picker > .arrow-button > .arrow {
-    -fx-background-color: #FC094B;
+    -fx-background-color: -fx-accent-color;
 }
 
 .date-picker-popup {
+    -fx-cursor: hand;
     -fx-background-color: black;
-    -fx-fill: white;
+    -fx-fill: black;
 }
 
 .date-picker-popup .button {
-        -fx-background-color: #ffffff00;
-        -fx-text-fill: white;
+        -fx-background-color: -fx-transparent-bgcolor;
+        -fx-text-fill: black;
         -fx-font-weight: normal;
         -fx-font-size: 10;
         -fx-min-width: 10;
@@ -159,21 +209,34 @@ VBox, AnchorPane {
         -fx-min-height: 10;
 }
 
-.date-picker-popup .day-cell:selected {
-    -fx-background-color: darkgray;
+.date-picker .cell {
+  -fx-background-color: white;
 }
 
-.date-picker-popup .day-cell:today {
-    -fx-background-color: gray;
-    -fx-font-weight: bold;
+.date-picker .cell:hover {
+  -fx-background-color: -fx-accent-color;
+  -fx-text-fill: white;
+}
+
+.date-picker .cell:focused {
+  -fx-background-color: -fx-accent-color;
+  -fx-text-fill: white;
 }
 
 .date-picker-popup .text{
     -fx-fill: black;
 }
 
+.date-picker-popup .month-year-pane {
+  -fx-background-color: -fx-accent-color;
+}
+
 .date-picker-popup .day-cell:disabled {
     -fx-text-fill: gray;
+}
+
+.date-picker-popup .week-number-cell {
+  -fx-text-fill: gray;
 }
 
 .tab-pane {
@@ -182,6 +245,7 @@ VBox, AnchorPane {
 }
 
 .tab {
+    -fx-cursor: hand;
     -fx-background-color: #1B191E;
     -fx-border-width: 0;
     -fx-background-insets: 2;
@@ -190,7 +254,11 @@ VBox, AnchorPane {
 }
 
 .tab:selected {
-    -fx-background-color: #FC094B;
+    -fx-background-color: -fx-accent-color;
+}
+
+.tab:hover {
+    -fx-background-color: -fx-accent-color;
 }
 
 .tab-pane .tab-header-area {
@@ -198,7 +266,7 @@ VBox, AnchorPane {
 }
 
 .tab-pane *.tab-header-background {
-    -fx-background-color: #141217;
+    -fx-background-color: -fx-bgcolor;
     -fx-padding: 0;
 
 }
@@ -209,6 +277,37 @@ VBox, AnchorPane {
 
 .label {
     -fx-text-fill: white;
+}
+
+.my-dialog-pane {
+    -fx-background-color: -fx-bgcolor;
+}
+
+.my-dialog-pane:header *.header-panel{
+    -fx-background-color: -fx-bgcolor;
+}
+
+.my-dialog-pane > *.content .label {
+    -fx-text-fill: white;
+}
+
+.my-dialog-pane:header *.header-panel *.label {
+    -fx-text-fill: white;
+}
+
+.my-dialog-pane .button {
+    -fx-cursor: hand;
+    -fx-background-color: -fx-accent-color;
+    -fx-border-radius: 5;
+    -fx-text-fill: -fx-txt-w;
+    -fx-min-width: 30;
+    -fx-min-height: 15;
+    -fx-font-size: 10;
+}
+
+.my-dialog-pane .button:hover {
+    -fx-background-color: white;
+    -fx-text-fill: -fx-accent-color;
 }
 
 

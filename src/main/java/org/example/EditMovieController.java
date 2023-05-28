@@ -68,7 +68,7 @@ public class EditMovieController {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT film.tytul, film.opis, film.czas_trwania, film.ocena, gatunek.nazwa_gatunku AS nazwa_gatunku, film.cena FROM film INNER JOIN gatunek ON film.id_gatunku=gatunek.id_gatunku;");
+            ResultSet resultSet = statement.executeQuery("SELECT film.tytul, film.opis, film.czas_trwania, film.ocena, gatunek.nazwa_gatunku AS nazwa_gatunku, film.okladka, film.cena FROM film INNER JOIN gatunek ON film.id_gatunku=gatunek.id_gatunku;");
             System.out.println("Połączono");
 
             while (resultSet.next()) {
@@ -77,9 +77,10 @@ public class EditMovieController {
                 int czas_trwania = resultSet.getInt("czas_trwania");
                 double ocena = resultSet.getDouble("ocena");
                 String nazwa_gatunku = resultSet.getString("nazwa_gatunku");
+                byte[] okladka = resultSet.getBytes("okladka");
                 double cena = resultSet.getDouble("cena");
 
-                MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(tytul, opis, czas_trwania, ocena, nazwa_gatunku, cena);
+                MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(tytul, opis, czas_trwania, ocena, nazwa_gatunku,okladka, cena);
                 movieDetailsAdapterList.add(movieDetailsAdapter);
 
                 System.out.println("Pobrano rekord");

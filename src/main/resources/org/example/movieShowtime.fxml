@@ -57,7 +57,7 @@
                                                 <Insets bottom="15.0" />
                                              </VBox.margin>
                                           </TableView>
-                                          <Button fx:id="buttonLoadDataMovieShowtime" mnemonicParsing="false" text="Pobierz dane z DB" />
+                                          <Button fx:id="buttonLoadDataMovieShowtime" mnemonicParsing="false" text="Wyświetl seanse" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -67,7 +67,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                      <Tab text="Dodaj seans">
+                      <Tab onSelectionChanged="#populateChoiceBoxes" text="Dodaj seans">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="600.0">
                                  <children>
@@ -104,13 +104,18 @@
                                                 <Insets bottom="30.0" />
                                              </VBox.margin>
                                           </GridPane>
-                                          <Button fx:id="addMovieShowButton" mnemonicParsing="false" text="Dodaj do DB" />
+                                          <Button fx:id="addMovieShowButton" mnemonicParsing="false" text="Dodaj seans" />
+                                          <Text fx:id="textAreaAddMovieShowDesc" disable="true" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="480.0">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Text>
                                        </children>
                                     </VBox>
                                  </children></AnchorPane>
                         </content>
                       </Tab>
-                      <Tab text="Edytuj seans">
+                      <Tab onSelectionChanged="#populateEditMovieShowList" text="Edytuj seans">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -156,6 +161,11 @@
                                                 <Insets top="20.0" />
                                              </VBox.margin>
                                           </Button>
+                                          <Text fx:id="textAreaEditMovieShowDesc" disable="true" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="480.0">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Text>
                                        </children>
                                        <padding>
                                           <Insets left="20.0" right="20.0" />
@@ -164,7 +174,7 @@
                                  </children></AnchorPane>
                         </content>
                       </Tab>
-                        <Tab text="Usuń seans">
+                        <Tab onSelectionChanged="#populateMovieShowList" text="Usuń seans">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>

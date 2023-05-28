@@ -21,103 +21,70 @@
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Pane fx:id="buttonAddMovie" accessibleRole="BUTTON" onMouseClicked="#addMovie" prefHeight="184.0" prefWidth="164.0" styleClass="actionItem" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Pane accessibleRole="BUTTON" onMouseClicked="#movies" prefHeight="184.0" prefWidth="164.0" styleClass="actionItem" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj film" textAlignment="CENTER" wrappingWidth="168.0">
+                        <Text layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filmy" textAlignment="CENTER" wrappingWidth="262.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
                            </styleClass>
                         </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <Circle fill="#fc094b" layoutX="131.0" layoutY="78.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="99.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/plus_icon_gray.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane onMouseClicked="#editMovie" prefHeight="200.0" prefWidth="185.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1">
-                     <children>
-                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj film" textAlignment="CENTER" wrappingWidth="168.0">
-                           <styleClass>
-                              <String fx:value="text" />
-                              <String fx:value="h2" />
-                           </styleClass>
-                        </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/icon_edit.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" onMouseClicked="#removeMovie" prefHeight="55.0" prefWidth="55.0" styleClass="actionItem" GridPane.columnIndex="2">
-                     <children>
-                        <Text layoutX="1.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń film" textAlignment="CENTER" wrappingWidth="167.0">
-                           <styleClass>
-                              <String fx:value="text" />
-                              <String fx:value="h2" />
-                           </styleClass>
-                        </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/icon_minus.png" />
+                              <Image url="@icons/icon_play.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
                   <Pane accessibleRole="BUTTON" onMouseClicked="#deleteUser" prefHeight="184.0" prefWidth="164.0" styleClass="actionItem" GridPane.rowIndex="1">
                      <children>
-                        <Text layoutX="1.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń użytkownika" textAlignment="CENTER" wrappingWidth="167.0">
+                        <Text layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń użytkownika" textAlignment="CENTER" wrappingWidth="262.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
                            </styleClass>
                         </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <Circle fill="#fc094b" layoutX="130.0" layoutY="77.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="95.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/icon_user.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane onMouseClicked="#showTickets" prefHeight="200.0" prefWidth="185.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Pane onMouseClicked="#movieShowtime" prefHeight="200.0" prefWidth="185.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1">
                      <children>
-                        <Text layoutX="-3.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ustaw seans" textAlignment="CENTER" wrappingWidth="174.0">
+                        <Text layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seanse" textAlignment="CENTER" wrappingWidth="262.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
                            </styleClass>
                         </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <Circle fill="#fc094b" layoutX="131.0" layoutY="79.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="96.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/icon_ticket.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane onMouseClicked="#showTransactions" prefHeight="208.0" prefWidth="175.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Pane onMouseClicked="#showTransactions" prefHeight="208.0" prefWidth="175.0" scaleShape="false" styleClass="actionItem" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Text layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transakcje" textAlignment="CENTER" wrappingWidth="167.0">
+                        <Text layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transakcje" textAlignment="CENTER" wrappingWidth="262.0">
                            <styleClass>
                               <String fx:value="text" />
                               <String fx:value="h2" />
                            </styleClass>
                         </Text>
-                        <Circle fill="#fc094b" layoutX="84.0" layoutY="76.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="49.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <Circle fill="#fc094b" layoutX="131.0" layoutY="77.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="70.0" fitWidth="96.0" layoutX="96.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/icon_list.png" />
                            </image>
