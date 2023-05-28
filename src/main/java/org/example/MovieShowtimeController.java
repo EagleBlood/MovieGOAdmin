@@ -1,26 +1,23 @@
 package org.example;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class MovieShowtimeController {
 
-    private String dbUrl = LoginCredentials.getDbUrl();
-    private String username = LoginCredentials.getUsername();
-    private String password = LoginCredentials.getPassword();
-    private List<String> timeList = new ArrayList<>();
+    private final String dbUrl = LoginCredentials.getDbUrl();
+    private final String username = LoginCredentials.getUsername();
+    private final String password = LoginCredentials.getPassword();
+    private final List<String> timeList = new ArrayList<>();
 
     //For Show pane
     @FXML
@@ -81,7 +78,7 @@ public class MovieShowtimeController {
         tableDB.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         id_seansuCol.setCellValueFactory(new PropertyValueFactory<>("id_seansu"));
-        id_filmuCol.setCellValueFactory(new PropertyValueFactory<>("id_filmu"));
+        id_filmuCol.setCellValueFactory(new PropertyValueFactory<>("tytul"));
         id_salaCol.setCellValueFactory(new PropertyValueFactory<>("id_sala"));
         dataCol.setCellValueFactory(new PropertyValueFactory<>("data"));
         pora_emisjiCol.setCellValueFactory(new PropertyValueFactory<>("pora_emisji"));
@@ -91,18 +88,15 @@ public class MovieShowtimeController {
             tableDB.getItems().setAll(movieShowtimeList);
         });
 
-
-        //Add tab pane functions
-        populateChoiceBoxes();
-
         //Add event handler for add button
         addMovieShowButton.setOnAction(event -> {
             SendShowtimeToDB();
+            showPopup("Seans został dodany.");
+            choiceAddMovieTitle.setValue(null);
+            choiceAddTimeList.setValue(null);
+            addDateInput.setValue(null);
         });
 
-
-        //Edit tab pane functions
-        populateEditMovieShowList();
 
         //Add event handler for edit button
         editMovieShowButton.setOnAction(event -> {
@@ -112,46 +106,37 @@ public class MovieShowtimeController {
                 MovieAdapter selectedMovie = choiceEditMovieTitle.getValue();
                 int movieId = selectedMovie.getId_filmu();
                 String date = editDateInput.getValue().toString();
-                String time = choiceEditTimeList.getValue().toString();
+                String time = choiceEditTimeList.getValue();
 
                 updateMovieShowInDatabase(movieShowId, movieId, date, time);
+
+                showPopup("Zmiany zostały zapisane.");
+
+                choiceEditMovieShowList.setValue(null);
+                choiceEditMovieTitle.setValue(null);
+                choiceEditTimeList.setValue(null);
+                editDateInput.setValue(null);
             } else {
-                Alert errorDialog = new Alert(Alert.AlertType.ERROR);
-                errorDialog.setTitle("Błąd");
-                errorDialog.setHeaderText("Nie wybrano seansu do edycji.");
-                errorDialog.setContentText("Wybierz seans z listy.");
-                errorDialog.showAndWait();
+
+                showAlert();
             }
         });
-
-
-        //Delete tab pane functions
-        populateMovieShowList();
 
         //Add event handler for remove button
         removeMovieShowButton.setOnAction(event -> {
             String selectedMovieShowID = choiceRemoveMovieShowList.getValue();
             if (selectedMovieShowID != null) {
 
-                Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-                confirmationDialog.setTitle("Potwierdzenie");
-                confirmationDialog.setHeaderText("Czy na pewno chcesz usunąć rekord?");
-                confirmationDialog.setContentText("Ta operacja jest nieodwracalna.");
-
-                Optional<ButtonType> result = confirmationDialog.showAndWait();
-                if (result.isPresent() && result.get() == ButtonType.OK) {
-
+                showAlert(() -> {
                     deleteMovieShowFromDatabase(Integer.parseInt(selectedMovieShowID));
                     choiceRemoveMovieShowList.getItems().clear();
                     populateMovieShowList();
 
-                    Stage popupStage = new Stage();
-                    popupStage.initModality(Modality.APPLICATION_MODAL);
-
-                    Label messageLabel = new Label("Film został usunięty!");
-                    showPopup(popupStage, messageLabel);
-                }
+                    showPopup("Seans został usunięty!");
+                    choiceRemoveMovieShowList.setValue(null);
+                });
             }
+
         });
     }
 
@@ -171,21 +156,24 @@ public class MovieShowtimeController {
 
         try (Connection conn = DriverManager.getConnection(dbUrl, username, password)) {
             Statement statement = conn.createStatement();
-            ResultSet result = statement.executeQuery("SELECT * FROM seanse");
+            ResultSet result = statement.executeQuery("SELECT seanse.id_seansu, film.tytul AS tytul, seanse.id_sala, seanse.data, seanse.pora_emisji FROM seanse INNER JOIN film ON seanse.id_filmu=film.id_filmu");
             System.out.println("Połączono");
 
             while (result.next()) {
                 int id_seansu = result.getInt("id_seansu");
-                int id_filmu = result.getInt("id_filmu");
+                String tytul = result.getString("tytul");
                 int id_sala = result.getInt("id_sala");
                 String data = result.getString("data");
                 String pora_emisji = result.getString("pora_emisji");
 
-                MovieShowtimeAdapter movieShowtime = new MovieShowtimeAdapter(id_seansu, id_filmu, id_sala, data, pora_emisji);
+                MovieShowtimeAdapter movieShowtime = new MovieShowtimeAdapter(id_seansu, tytul, id_sala, data, pora_emisji);
                 movieShowtimeList.add(movieShowtime);
 
                 System.out.println("Pobrano rekord");
             }
+
+            result.close();
+            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -214,6 +202,7 @@ public class MovieShowtimeController {
         }
     }
 
+    @FXML
     private void populateChoiceBoxes() {
 
         //Movie title choice box
@@ -226,9 +215,8 @@ public class MovieShowtimeController {
     }
 
 
-
-
     //Edit Movie pane functions
+    @FXML
     private void populateEditMovieShowList() {
         List<Integer> movieShowIds = retrieveMovieShowIdsFromDatabase();
         choiceEditMovieShowList.getItems().clear(); // Clear the choice box before adding new items
@@ -243,6 +231,36 @@ public class MovieShowtimeController {
 
         //Time choice box
         choiceEditTimeList.getItems().addAll(timeList);
+
+        choiceEditMovieShowList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            String selectedMovieShowID = String.valueOf(newValue);
+
+            List<MovieShowtimeAdapter> movieShowtimeList = retrieveMovieShowtimeFromDB();
+            MovieShowtimeAdapter selectedMovieShowtime = null;
+
+            for (MovieShowtimeAdapter movieShowtime : movieShowtimeList) {
+                if (String.valueOf(movieShowtime.getId_seansu()).equals(selectedMovieShowID)) {
+                    selectedMovieShowtime = movieShowtime;
+                    break;
+                }
+            }
+
+            if (selectedMovieShowtime != null) {
+                for (MovieAdapter movie : choiceEditMovieTitle.getItems()) {
+                    if (movie.getTytul().equals(selectedMovieShowtime.getTytul())) {
+                        choiceEditMovieTitle.setValue(movie);
+                        break;
+                    }
+                }
+                choiceEditTimeList.setValue(selectedMovieShowtime.getPora_emisji());
+
+                String dateString = selectedMovieShowtime.getData();
+                LocalDate date = LocalDate.parse(dateString);
+                editDateInput.setValue(date);
+            }
+        });
+
+
     }
 
     private void updateMovieShowInDatabase(int movieShowId, int movieId, String date, String time) {
@@ -289,6 +307,8 @@ public class MovieShowtimeController {
         return movieShowIds;
     }
 
+
+    @FXML
     private void populateMovieShowList() {
         List<Integer> movieShowIds = retrieveMovieShowIdsFromDatabase();
         choiceRemoveMovieShowList.getItems().clear(); // Clear the choice box before adding new items
@@ -314,22 +334,44 @@ public class MovieShowtimeController {
 
 
 
-
     //Global functions
-    private void showPopup(Stage popupStage, Label messageLabel) {
-        messageLabel.setAlignment(Pos.CENTER);
+    private void showPopup(String message) {
 
-        Button closeButton = new Button("Zamknij");
-        closeButton.setOnAction(e -> popupStage.close());
+        Alert alert = new Alert(Alert.AlertType.NONE, message, ButtonType.OK);
 
-        VBox vbox = new VBox(10);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().addAll(messageLabel, closeButton);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
+        dialogPane.getStyleClass().add("my-dialog-pane");
 
-        Scene scene = new Scene(vbox, 200, 100);
-        popupStage.setScene(scene);
+        alert.show();
 
-        popupStage.showAndWait();
+    }
+
+    private void showAlert(Runnable onConfirmation) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Potwierdzenie");
+        alert.setHeaderText("Czy na pewno chcesz usunąć rekord?");
+        alert.setContentText("Ta operacja jest nieodwracalna.");
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
+        dialogPane.getStyleClass().add("my-dialog-pane");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            onConfirmation.run();
+        }
+    }
+
+    private void showAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Błąd");
+        alert.setHeaderText("Nie wybrano seansu do edycji.");
+        alert.setContentText("Wybierz seans z listy.");
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
+        dialogPane.getStyleClass().add("my-dialog-pane");
     }
 
     @FXML

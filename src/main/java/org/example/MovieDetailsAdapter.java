@@ -6,14 +6,16 @@ public class MovieDetailsAdapter {
     private double ocena;
     private String opis;
     private String nazwa_gatunku;
+    private byte[] okladka;
     private double cena;
 
-    public MovieDetailsAdapter(String tytul, String opis, int czas_trwania, double ocena, String nazwa_gatunku, double cena) {
+    public MovieDetailsAdapter(String tytul, String opis, int czas_trwania, double ocena, String nazwa_gatunku, byte[] okladka, double cena) {
         this.tytul = tytul;
         this.czas_trwania = czas_trwania;
         this.ocena = ocena;
         this.opis = opis;
         this.nazwa_gatunku = nazwa_gatunku;
+        this.okladka = okladka;
         this.cena = cena;
     }
 
@@ -55,6 +57,14 @@ public class MovieDetailsAdapter {
 
     public void setNazwa_gatunku(String nazwa_gatunku) {
         this.nazwa_gatunku = nazwa_gatunku;
+    }
+
+    public byte[] getOkladka() {
+        return okladka;
+    }
+
+    public void setOkladka(byte[] okladka) {
+        this.okladka = okladka;
     }
 
     public double getCena() {
