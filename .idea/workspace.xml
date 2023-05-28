@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="delete user">
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="deleteUser.fxmlfinished, movieShowtime.fxml renamed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FilmShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/deleteUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/deleteUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/filmShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;testing.instrumented.configuration&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -110,6 +110,7 @@
       <workItem from="1684424437836" duration="424000" />
       <workItem from="1684828209943" duration="763000" />
       <workItem from="1684828984405" duration="3832000" />
+      <workItem from="1685109213148" duration="7551000" />
     </task>
     <task id="LOCAL-00001" summary="Creation">
       <created>1684229583048</created>
@@ -195,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684934959283</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="deleteUser.fxmlfinished, movieShowtime.fxml renamed">
+      <created>1685107423310</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685107423310</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +236,7 @@
     <MESSAGE value="Text changed, removeMovie.fxml adjust" />
     <MESSAGE value="removeMovie.fxml finished" />
     <MESSAGE value="delete user" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete user" />
+    <MESSAGE value="deleteUser.fxmlfinished, movieShowtime.fxml renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleteUser.fxmlfinished, movieShowtime.fxml renamed" />
   </component>
 </project>
