@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adapters;
 
 public class LoginCredentials {
     private static String username;

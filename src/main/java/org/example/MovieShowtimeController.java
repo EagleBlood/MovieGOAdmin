@@ -3,6 +3,9 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.example.adapters.LoginCredentials;
+import org.example.adapters.MovieAdapter;
+import org.example.adapters.MovieShowtimeAdapter;
 
 import java.io.IOException;
 import java.sql.*;
@@ -209,7 +212,7 @@ public class MovieShowtimeController {
     private void populateChoiceBoxes() {
 
         //Movie title choice box
-        RemoveMovieController removeMovieController = new RemoveMovieController();
+        MoviesController removeMovieController = new MoviesController();
         List<MovieAdapter> movieTitles = removeMovieController.retrieveMovieTitlesFromDatabase();
         choiceAddMovieTitle.getItems().addAll(movieTitles);
         choiceEditMovieTitle.getItems().addAll(movieTitles);

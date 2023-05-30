@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="Changes v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/LoginCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieDetailsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieDetailsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieShowtimeAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,10 +86,10 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="MovieGoAdmin" />
+      <module name="MovieGOAdmin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.adapters.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
