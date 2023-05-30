@@ -108,7 +108,7 @@ public class MovieShowtimeController {
                 String date = editDateInput.getValue().toString();
                 String time = choiceEditTimeList.getValue();
 
-                updateMovieShowInDatabase(movieShowId, movieId, date, time);
+                updateMovieShowInDB(movieShowId, movieId, date, time);
 
                 showPopup("Zmiany zostały zapisane.");
 
@@ -263,7 +263,7 @@ public class MovieShowtimeController {
 
     }
 
-    private void updateMovieShowInDatabase(int movieShowId, int movieId, String date, String time) {
+    private void updateMovieShowInDB(int movieShowId, int movieId, String date, String time) {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             PreparedStatement statement = connection.prepareStatement("UPDATE seanse SET id_filmu = ?, data = ?, pora_emisji = ? WHERE id_seansu = ?");
