@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="Changes">
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="Changes v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685467513708</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Changes v2">
+      <created>1685471990406</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685471990406</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +259,7 @@
     <MESSAGE value="deleteUser.fxmlfinished, movieShowtime.fxml renamed" />
     <MESSAGE value="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="Changes v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes v2" />
   </component>
 </project>

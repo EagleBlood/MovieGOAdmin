@@ -30,7 +30,6 @@ public class MoviesController {
     private String dbUrl = LoginCredentials.getDbUrl();
     private String username = LoginCredentials.getUsername();
     private String password = LoginCredentials.getPassword();
-    private byte[] cover = null;
 
 
     //For show movies Pane
@@ -173,13 +172,11 @@ public class MoviesController {
             String genre = editMovieGenreInput.getValue();
 
 
-            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null && cover != null) {
+            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null && imageData != null) {
                 int movieId = retrieveMovieIdFromDB(selectedMovie);
                 int genreId = retrieveGenreIdFromDatabase(genre);
 
-                System.out.println("przed " + movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre + " " + cover);
-                updateMovieInDB(movieId, length, score, description, genreId, cover, price);
-                System.out.println("po " + movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre + " " + cover);
+                updateMovieInDB(movieId, length, score, description, genreId, imageData, price);
 
                 showPopup("Film został zaktualizowany");
 
@@ -258,12 +255,8 @@ public class MoviesController {
 
             String filePath = file.getAbsolutePath();
             Image image = new Image(new File(filePath).toURI().toString());
-            imageView.setImage(image);
 
-            cover = new File(filePath).toURI().toString().getBytes();
-            coverAddMovie.setImage(image);
-            coverEditMovie.setImage(image);
-            System.out.println(cover);
+            imageView.setImage(image);
         }
     }
 
@@ -418,7 +411,7 @@ public class MoviesController {
                     }
                 }
 
-                cover = selectedMovie.getOkladka();
+                byte[] cover = selectedMovie.getOkladka();
                 System.out.println("Po populacji: " + cover);
 
                 Image image = convertByteArrayToImage(cover);
