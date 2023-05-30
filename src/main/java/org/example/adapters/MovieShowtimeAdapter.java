@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adapters;
 
 import java.time.LocalDate;
 

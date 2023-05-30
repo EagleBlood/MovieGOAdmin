@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adapters;
 
 public class MovieAdapter {
     private int id_filmu;

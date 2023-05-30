@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.adapters.LoginCredentials;
 
 import java.io.IOException;
 import java.sql.*;

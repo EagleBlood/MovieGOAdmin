@@ -8,6 +8,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.*;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import org.example.adapters.LoginCredentials;
+import org.example.adapters.MovieAdapter;
+import org.example.adapters.MovieDetailsAdapter;
 
 import javax.imageio.ImageIO;
 
