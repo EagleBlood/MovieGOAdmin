@@ -5,7 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.WritablePixelFormat;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
@@ -23,9 +26,11 @@ import java.util.Optional;
 
 public class MoviesController {
 
+    //GLOBAL
     private String dbUrl = LoginCredentials.getDbUrl();
     private String username = LoginCredentials.getUsername();
     private String password = LoginCredentials.getPassword();
+    private byte[] cover = null;
 
 
     //For show movies Pane
@@ -168,13 +173,13 @@ public class MoviesController {
             String genre = editMovieGenreInput.getValue();
 
 
-            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null) {
+            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null && cover != null) {
                 int movieId = retrieveMovieIdFromDB(selectedMovie);
                 int genreId = retrieveGenreIdFromDatabase(genre);
-                byte[] cover = convertImageToByteArray(coverEditMovie.getImage());
 
-                //System.out.println(movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre);
+                System.out.println("przed " + movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre + " " + cover);
                 updateMovieInDB(movieId, length, score, description, genreId, cover, price);
+                System.out.println("po " + movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre + " " + cover);
 
                 showPopup("Film został zaktualizowany");
 
@@ -184,6 +189,7 @@ public class MoviesController {
                 editMovieDescInput.setText(null);
                 editMoviePriceInput.setText(null);
                 editMovieGenreInput.setValue(null);
+                coverEditMovie.setImage(null);
             } else {
                 showPopup("Błędne dane!");
             }
@@ -231,6 +237,8 @@ public class MoviesController {
     }
 
 
+
+
     //For add movie Pane
 
     @FXML
@@ -252,6 +260,10 @@ public class MoviesController {
             Image image = new Image(new File(filePath).toURI().toString());
             imageView.setImage(image);
 
+            cover = new File(filePath).toURI().toString().getBytes();
+            coverAddMovie.setImage(image);
+            coverEditMovie.setImage(image);
+            System.out.println(cover);
         }
     }
 
@@ -405,10 +417,12 @@ public class MoviesController {
                         break;
                     }
                 }
-                byte[] cover = selectedMovie.getOkladka();
+
+                cover = selectedMovie.getOkladka();
+                System.out.println("Po populacji: " + cover);
+
                 Image image = convertByteArrayToImage(cover);
                 coverEditMovie.setImage(image);
-
 
                 editMovieLengthInput.setText(String.valueOf(selectedMovie.getCzas_trwania()));
                 editMovieScoreInput.setText(String.valueOf(selectedMovie.getOcena()));
@@ -418,7 +432,7 @@ public class MoviesController {
         });
     }
 
-    private void updateMovieInDB(int movieId, String length, String score, String description, int genreId, byte[] cover, Double price) {
+    private void updateMovieInDB(int movieId, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             PreparedStatement statement = connection.prepareStatement("UPDATE film SET czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
@@ -426,15 +440,18 @@ public class MoviesController {
             statement.setString(2, score);
             statement.setString(3, description);
             statement.setInt(4, genreId);
-            statement.setBytes(5, cover);
+            statement.setBytes(5, coverImg);
             statement.setDouble(6, price);
             statement.setInt(7, movieId);
 
-            statement.executeUpdate();
+            int rowsAffected = statement.executeUpdate();
+
+            System.out.println(rowsAffected + " row(s) inserted.");
+
             statement.close();
             connection.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
