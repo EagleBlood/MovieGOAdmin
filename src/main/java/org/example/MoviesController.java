@@ -7,6 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.WritablePixelFormat;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
@@ -17,7 +19,6 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -155,26 +156,48 @@ public class MoviesController {
             movieDescInput.setText(null);
             moviePriceInput.setText(null);
             movieGenreInput.setValue(null);
+            coverEditMovie.setImage(null);
         });
 
 
         //For edit
 
-
         editMovieButton.setOnAction(event -> {
+            String selectedMovie = editMovieList.getValue();
+            String length = editMovieLengthInput.getText();
+            String score = editMovieScoreInput.getText();
+            String description = editMovieDescInput.getText();
+            Double price = Double.parseDouble(editMoviePriceInput.getText());
+            String genre = editMovieGenreInput.getValue();
 
 
+            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null) {
+                int movieId = retrieveMovieIdFromDB(selectedMovie);
+                int genreId = retrieveGenreIdFromDatabase(genre);
+                byte[] cover = convertImageToByteArray(coverEditMovie.getImage());
 
-            showPopup("Film został zaktualizowany");
+                //System.out.println(movieId + " " + selectedMovie  + " " + length  + " " + score + " " + description + " " + price + " " + genre);
+                updateMovieInDB(movieId, length, score, description, genreId, cover, price);
 
-            editMovieList.setValue(null);
-            editMovieLengthInput.setText(null);
-            editMovieScoreInput.setText(null);
-            editMovieDescInput.setText(null);
-            editMoviePriceInput.setText(null);
-            editMovieGenreInput.setValue(null);
+                showPopup("Film został zaktualizowany");
 
+                editMovieList.setValue(null);
+                editMovieLengthInput.setText(null);
+                editMovieScoreInput.setText(null);
+                editMovieDescInput.setText(null);
+                editMoviePriceInput.setText(null);
+                editMovieGenreInput.setValue(null);
+            } else {
+                showPopup("Błędne dane!");
+            }
         });
+
+        //Load img
+        editMovieCoverButton.setOnAction(event -> {
+            loadMovieCoverImg();
+        });
+
+
 
         //For remove movie Pane
 
@@ -209,6 +232,7 @@ public class MoviesController {
         });
 
     }
+
 
 
 
@@ -386,6 +410,9 @@ public class MoviesController {
                         break;
                     }
                 }
+                byte[] cover = selectedMovie.getOkladka();
+                Image image = convertByteArrayToImage(cover);
+                coverEditMovie.setImage(image);
 
                 editMovieLengthInput.setText(String.valueOf(selectedMovie.getCzas_trwania()));
                 editMovieScoreInput.setText(String.valueOf(selectedMovie.getOcena()));
@@ -393,9 +420,55 @@ public class MoviesController {
                 editMoviePriceInput.setText(String.valueOf(selectedMovie.getCena()));
             }
         });
-
-
     }
+
+    private void updateMovieInDB(int movieId, String length, String score, String description, int genreId, byte[] cover, Double price) {
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            PreparedStatement statement = connection.prepareStatement("UPDATE film SET czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
+            statement.setString(1, length);
+            statement.setString(2, score);
+            statement.setString(3, description);
+            statement.setInt(4, genreId);
+            statement.setBytes(5, cover);
+            statement.setDouble(6, price);
+            statement.setInt(7, movieId);
+
+            statement.executeUpdate();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private int retrieveMovieIdFromDB(String movieTitle) {
+        int movieId = -1; // Default value if no matching ID is found
+
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            PreparedStatement statement = connection.prepareStatement("SELECT id_filmu FROM film WHERE tytul = ?");
+            statement.setString(1, movieTitle);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                movieId = resultSet.getInt("id_filmu");
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return movieId;
+    }
+
+
+
+
 
 
     //Remove movie functions
@@ -484,6 +557,9 @@ public class MoviesController {
         return success;
     }
 
+
+
+
     // GLOBAL
 
     private void showPopup(String message) {
@@ -523,6 +599,23 @@ public class MoviesController {
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
         dialogPane.getStyleClass().add("my-dialog-pane");
+    }
+
+    private byte[] convertImageToByteArray(Image image) {
+        int width = (int) image.getWidth();
+        int height = (int) image.getHeight();
+        byte[] buffer = new byte[width * height * 4];
+
+        PixelReader pixelReader = image.getPixelReader();
+        pixelReader.getPixels(0, 0, width, height, WritablePixelFormat.getByteBgraInstance(), buffer, 0, width * 4);
+
+        return buffer;
+    }
+
+    private Image convertByteArrayToImage(byte[] byteArray) {
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
+        Image image = new Image(inputStream);
+        return image;
     }
 
     @FXML

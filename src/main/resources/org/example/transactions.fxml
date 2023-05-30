@@ -28,9 +28,9 @@
                         </Text>
                   <TableView fx:id="tableDB" editable="true" prefHeight="453.0" prefWidth="600.0" styleClass="my-table-view">
                      <columns>
-                        <TableColumn fx:id="id_filmuCol" prefWidth="75.0" text="Numer zamówienia" />
+                        <TableColumn fx:id="nr_rezerwacjiCol" prefWidth="75.0" text="Numer zamówienia" />
                         <TableColumn fx:id="tytulCol" prefWidth="75.0" text="Tytuł filmu" />
-                        <TableColumn fx:id="czas_trwaniaCol" prefWidth="75.0" text="Użytkownik" />
+                        <TableColumn fx:id="loginCol" prefWidth="75.0" text="Użytkownik" />
                         <TableColumn fx:id="ocenaCol" prefWidth="75.0" text="Ilość biletów" />
                         <TableColumn fx:id="opisCol" prefWidth="75.0" text="Miejsca" />
                         <TableColumn fx:id="id_gatunkuCol" prefWidth="75.0" text="Wartość zamówienia" />

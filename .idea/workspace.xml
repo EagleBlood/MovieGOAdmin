@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="deleteUser.fxmlfinished, movieShowtime.fxml renamed">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/icons/icon_play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/icons/image_default.png" afterDir="false" />
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieDetailsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieDetailsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/addMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movies.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/icons/icon_edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/icons/icon_minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/icons/icon_plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/icons/plus_icon_gray.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,14 +66,10 @@
       <recent name="org.example" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\moj\ANS\rok II\semestr IV\MovieGOAdmin\src\main\resources\org\example\icons" />
       <recent name="E:\moj\ANS\rok II\semestr IV\MovieGOAdmin\src\main\resources\org\example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\moj\ANS\rok II\semestr IV\MovieGOAdmin\src\main\resources\org\example\icons" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.example" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,7 +77,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="MovieGOAdmin" />
+      <module name="MovieGoAdmin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -126,6 +108,7 @@
       <workItem from="1684424437836" duration="424000" />
       <workItem from="1684828209943" duration="763000" />
       <workItem from="1684828984405" duration="3832000" />
+      <workItem from="1685109213148" duration="7551000" />
     </task>
     <task id="LOCAL-00001" summary="Creation">
       <created>1684229583048</created>
@@ -218,12 +201,12 @@
       <option name="project" value="LOCAL" />
       <updated>1685107423310</updated>
     </task>
-    <task id="LOCAL-00014" summary="transactions.fxml, movieShowtime.fxml, MovieDetailsAdapter and editMovie.fxml">
-      <created>1685116225391</created>
+    <task id="LOCAL-00014" summary="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust">
+      <created>1685118899481</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1685116225391</updated>
+      <updated>1685118899481</updated>
     </task>
     <task id="LOCAL-00015" summary="editMovie.fxml">
       <created>1685116251200</created>
@@ -232,7 +215,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685116251200</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +252,7 @@
     <MESSAGE value="transactions.fxml, movieShowtime.fxml, MovieDetailsAdapter and editMovie.fxml" />
     <MESSAGE value="editMovie.fxml" />
     <MESSAGE value="deleteUser.fxmlfinished, movieShowtime.fxml renamed" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleteUser.fxmlfinished, movieShowtime.fxml renamed" />
+    <MESSAGE value="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust" />
+    <option name="LAST_COMMIT_MESSAGE" value="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust" />
   </component>
 </project>
