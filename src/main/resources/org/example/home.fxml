@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
@@ -97,24 +98,40 @@
       </AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #ffffff08;" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="buttonLogout" layoutX="55.0" layoutY="472.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Wyloguj" />
-            <ImageView fitHeight="190.0" fitWidth="184.0" layoutX="38.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@icons/logo.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="73.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MovieGO">
-               <styleClass>
-                  <String fx:value="h1" />
-                  <String fx:value="text" />
-               </styleClass>
-            </Text>
-            <Text layoutX="92.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="CENTER">
-               <styleClass>
-                  <String fx:value="h1" />
-                  <String fx:value="text" />
-               </styleClass>
-            </Text>
+            <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="190.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MovieGO">
+                     <styleClass>
+                        <String fx:value="h1" />
+                        <String fx:value="text" />
+                     </styleClass>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="CENTER">
+                     <styleClass>
+                        <String fx:value="h1" />
+                        <String fx:value="text" />
+                     </styleClass>
+                  </Text>
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Aplikacja do zarządzania kinem" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="221.0">
+                     <styleClass>
+                        <String fx:value="h1" />
+                        <String fx:value="text" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="70.0" top="70.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Button fx:id="buttonLogout" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Wyloguj" />
+               </children>
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="140.0" left="50.0" right="50.0" top="140.0" />

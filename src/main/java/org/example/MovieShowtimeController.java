@@ -138,6 +138,10 @@ public class MovieShowtimeController {
             }
 
         });
+
+
+        populateChoiceBoxes();
+        populateEditMovieShowList();
     }
 
 
@@ -202,35 +206,45 @@ public class MovieShowtimeController {
         }
     }
 
-    @FXML
     private void populateChoiceBoxes() {
 
         //Movie title choice box
         RemoveMovieController removeMovieController = new RemoveMovieController();
         List<MovieAdapter> movieTitles = removeMovieController.retrieveMovieTitlesFromDatabase();
         choiceAddMovieTitle.getItems().addAll(movieTitles);
+        choiceEditMovieTitle.getItems().addAll(movieTitles);
 
         //Time choice box
+        choiceEditTimeList.getItems().addAll(timeList);
         choiceAddTimeList.getItems().addAll(timeList);
+    }
+
+
+    @FXML
+    private void clearAddPane(){
+        choiceAddMovieTitle.setValue(null);
+        choiceAddTimeList.setValue(null);
+        addDateInput.setValue(null);
     }
 
 
     //Edit Movie pane functions
     @FXML
+    private void clearEditPane(){
+        choiceEditMovieShowList.setValue(null);
+        choiceEditMovieTitle.setValue(null);
+        choiceEditTimeList.setValue(null);
+        editDateInput.setValue(null);
+    }
+
     private void populateEditMovieShowList() {
+
         List<Integer> movieShowIds = retrieveMovieShowIdsFromDatabase();
         choiceEditMovieShowList.getItems().clear(); // Clear the choice box before adding new items
 
         for (Integer movieShowId : movieShowIds) {
             choiceEditMovieShowList.getItems().add(movieShowId);
         }
-
-        RemoveMovieController removeMovieController = new RemoveMovieController();
-        List<MovieAdapter> movieTitles = removeMovieController.retrieveMovieTitlesFromDatabase();
-        choiceEditMovieTitle.getItems().addAll(movieTitles);
-
-        //Time choice box
-        choiceEditTimeList.getItems().addAll(timeList);
 
         choiceEditMovieShowList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             String selectedMovieShowID = String.valueOf(newValue);
