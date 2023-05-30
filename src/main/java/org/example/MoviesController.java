@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
+import javafx.scene.image.*;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
@@ -137,7 +134,7 @@ public class MoviesController {
 
             //Load img
         movieCoverButton.setOnAction(event -> {
-            loadMovieCoverImg();
+            loadMovieCoverImg(coverAddMovie);
         });
 
             //List
@@ -194,7 +191,7 @@ public class MoviesController {
 
         //Load img
         editMovieCoverButton.setOnAction(event -> {
-            loadMovieCoverImg();
+            loadMovieCoverImg(coverEditMovie);
         });
 
 
@@ -234,12 +231,10 @@ public class MoviesController {
     }
 
 
-
-
     //For add movie Pane
 
     @FXML
-    private void loadMovieCoverImg() {
+    private void loadMovieCoverImg(ImageView imageView) {
         File file = fileChooser.showOpenDialog(movieCoverButton.getScene().getWindow());
         if (file != null) {
             try (InputStream inputStream = new FileInputStream(file)) {
@@ -255,7 +250,7 @@ public class MoviesController {
 
             String filePath = file.getAbsolutePath();
             Image image = new Image(new File(filePath).toURI().toString());
-            coverAddMovie.setImage(image);
+            imageView.setImage(image);
 
         }
     }
@@ -413,6 +408,7 @@ public class MoviesController {
                 byte[] cover = selectedMovie.getOkladka();
                 Image image = convertByteArrayToImage(cover);
                 coverEditMovie.setImage(image);
+
 
                 editMovieLengthInput.setText(String.valueOf(selectedMovie.getCzas_trwania()));
                 editMovieScoreInput.setText(String.valueOf(selectedMovie.getOcena()));
