@@ -48,6 +48,8 @@ public class MovieShowtimeController {
     private ChoiceBox<String> choiceAddTimeList;
     @FXML
     private Button addMovieShowButton;
+    @FXML
+    private Button addClearButton;
 
 
     //For Edit pane
@@ -61,6 +63,8 @@ public class MovieShowtimeController {
     private ChoiceBox<String> choiceEditTimeList;
     @FXML
     private Button editMovieShowButton;
+    @FXML
+    private Button editClearButton;
 
 
     //For Delete pane
@@ -89,6 +93,8 @@ public class MovieShowtimeController {
         buttonLoadDataMovieShowtime.setOnAction(event -> {
             List<MovieShowtimeAdapter> movieShowtimeList = retrieveMovieShowtimeFromDB();
             tableDB.getItems().setAll(movieShowtimeList);
+
+            buttonLoadDataMovieShowtime.setText("Aktualizuj");
         });
 
         //Add event handler for add button
@@ -99,6 +105,8 @@ public class MovieShowtimeController {
             choiceAddTimeList.setValue(null);
             addDateInput.setValue(null);
         });
+
+        addClearButton.setOnAction(event -> clearAddPane());
 
 
         //Add event handler for edit button
@@ -124,6 +132,9 @@ public class MovieShowtimeController {
                 showAlert();
             }
         });
+
+
+        editClearButton.setOnAction(event -> clearForEdit());
 
         //Add event handler for remove button
         removeMovieShowButton.setOnAction(event -> {
@@ -234,13 +245,7 @@ public class MovieShowtimeController {
     //Edit Movie pane functions
     @FXML
     private void clearEditPane(){
-        choiceEditMovieShowList.setValue(null);
-        choiceEditMovieTitle.setValue(null);
-        choiceEditTimeList.setValue(null);
-        editDateInput.setValue(null);
-    }
-
-    private void populateEditMovieShowList() {
+        clearForEdit();
 
         List<Integer> movieShowIds = retrieveMovieShowIdsFromDatabase();
         choiceEditMovieShowList.getItems().clear(); // Clear the choice box before adding new items
@@ -248,6 +253,16 @@ public class MovieShowtimeController {
         for (Integer movieShowId : movieShowIds) {
             choiceEditMovieShowList.getItems().add(movieShowId);
         }
+    }
+
+    private void clearForEdit(){
+        choiceEditMovieShowList.setValue(null);
+        choiceEditMovieTitle.setValue(null);
+        choiceEditTimeList.setValue(null);
+        editDateInput.setValue(null);
+    }
+
+    private void populateEditMovieShowList() {
 
         choiceEditMovieShowList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             String selectedMovieShowID = String.valueOf(newValue);
