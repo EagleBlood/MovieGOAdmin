@@ -79,6 +79,29 @@ VBox, AnchorPane {
     -fx-fill: -fx-accent-color;
 }
 
+.clear-button  {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-accent-color;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-min-width: 150;
+    -fx-border-radius: 7;
+    -fx-min-height: 40;
+}
+
+.clear-button .text{
+    -fx-fill: white;
+}
+
+.clear-button:hover{
+    -fx-background-color: -fx-accent-color;
+}
+
+.clear-button:hover .text{
+    -fx-fill: white;
+}
+
 .actionItem {
     -fx-cursor: hand;
     -fx-background-color: #ADADAD90;

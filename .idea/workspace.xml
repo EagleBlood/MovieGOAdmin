@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="Changes v2">
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="reorganized files, added adapters package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditMovieController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/LoginCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieDetailsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieDetailsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/MovieShowtimeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MovieShowtimeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RemoveMovieController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/editMovie.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/removeMovie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movieShowtime.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/movies.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/movies.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685471990406</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="reorganized files, added adapters package">
+      <created>1685476190147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685476190147</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +270,7 @@
     <MESSAGE value="MovieShowtimeController finished, RemoveMovieController variable renames, movieShowtime.fxml fx:id slight adjust" />
     <MESSAGE value="Changes" />
     <MESSAGE value="Changes v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes v2" />
+    <MESSAGE value="reorganized files, added adapters package" />
+    <option name="LAST_COMMIT_MESSAGE" value="reorganized files, added adapters package" />
   </component>
 </project>

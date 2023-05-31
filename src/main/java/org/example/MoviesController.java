@@ -7,8 +7,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import org.example.adapters.LoginCredentials;
@@ -16,23 +14,17 @@ import org.example.adapters.MovieAdapter;
 import org.example.adapters.MovieDetailsAdapter;
 
 import javax.imageio.ImageIO;
-
-
-
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 public class MoviesController {
 
     //GLOBAL
-    private String dbUrl = LoginCredentials.getDbUrl();
-    private String username = LoginCredentials.getUsername();
-    private String password = LoginCredentials.getPassword();
+    private final String dbUrl = LoginCredentials.getDbUrl();
+    private final String username = LoginCredentials.getUsername();
+    private final String password = LoginCredentials.getPassword();
 
 
     //For show movies Pane
@@ -75,11 +67,15 @@ public class MoviesController {
     private TextArea movieDescInput;
     @FXML
     private ImageView coverAddMovie;
+    @FXML
+    private Button clearButton;
 
     //For edit movie Pane
 
     @FXML
     private ChoiceBox<String> editMovieList;
+    @FXML
+    private TextField editMovieTitleInput;
     @FXML
     private TextField editMovieLengthInput;
     @FXML
@@ -96,6 +92,8 @@ public class MoviesController {
     private Button editMovieCoverButton;
     @FXML
     private Button editMovieButton;
+    @FXML
+    private Button editClearButton;
 
     //For remove movie Pane
 
@@ -107,7 +105,7 @@ public class MoviesController {
     private Button removeMovieButton;
 
 
-    private ObservableList<String> genreList = FXCollections.observableArrayList();
+    private final ObservableList<String> genreList = FXCollections.observableArrayList();
     private byte[] imageData = null;
 
 
@@ -128,6 +126,8 @@ public class MoviesController {
         buttonLoadData.setOnAction(event -> {
             List<MovieDetailsAdapter> movieDetailsAdapterList = retrieveMoviesFromDB();
             tableDB.setItems(FXCollections.observableArrayList(movieDetailsAdapterList));
+
+            buttonLoadData.setText("Aktualizuj");
         });
 
         //For add movie Pane
@@ -140,9 +140,7 @@ public class MoviesController {
         );
 
             //Load img
-        movieCoverButton.setOnAction(event -> {
-            loadMovieCoverImg(coverAddMovie);
-        });
+        movieCoverButton.setOnAction(event -> loadMovieCoverImg(coverAddMovie));
 
             //List
         retrieveGenreNamesFromDatabase();
@@ -150,24 +148,21 @@ public class MoviesController {
 
             //DB action
         buttonSendToDB.setOnAction(event -> {
-            SendMovieToDB();
+            sendMovieToDB();
 
             showPopup("Film został dodany.");
 
-            movieTitleInput.setText(null);
-            movieLengthInput.setText(null);
-            movieScoreInput.setText(null);
-            movieDescInput.setText(null);
-            moviePriceInput.setText(null);
-            movieGenreInput.setValue(null);
-            coverEditMovie.setImage(null);
+            clearAddMovie();
         });
+
+        clearButton.setOnAction(event -> clearAddMovie());
 
 
         //For edit
 
         editMovieButton.setOnAction(event -> {
             String selectedMovie = editMovieList.getValue();
+            String title = editMovieTitleInput.getText();
             String length = editMovieLengthInput.getText();
             String score = editMovieScoreInput.getText();
             String description = editMovieDescInput.getText();
@@ -175,31 +170,28 @@ public class MoviesController {
             String genre = editMovieGenreInput.getValue();
 
 
-            if (selectedMovie != null && length != null && score != null && description != null && price != null && genre != null && imageData != null) {
+            if (title != null && selectedMovie != null && length != null && score != null && description != null && genre != null && imageData != null) {
                 int movieId = retrieveMovieIdFromDB(selectedMovie);
                 int genreId = retrieveGenreIdFromDatabase(genre);
 
-                updateMovieInDB(movieId, length, score, description, genreId, imageData, price);
+                updateMovieInDB(movieId, title, length, score, description, genreId, imageData, price);
 
                 showPopup("Film został zaktualizowany");
 
-                editMovieList.setValue(null);
-                editMovieLengthInput.setText(null);
-                editMovieScoreInput.setText(null);
-                editMovieDescInput.setText(null);
-                editMoviePriceInput.setText(null);
-                editMovieGenreInput.setValue(null);
-                coverEditMovie.setImage(null);
+                clearEditMovie();
             } else {
-                showPopup("Błędne dane!");
+                showAlert();
             }
         });
 
-        //Load img
-        editMovieCoverButton.setOnAction(event -> {
-            loadMovieCoverImg(coverEditMovie);
-        });
+        populateEditMovieList();
+        editMovieGenreInput.setItems(genreList);
 
+
+        //Load img
+        editMovieCoverButton.setOnAction(event -> loadMovieCoverImg(coverEditMovie));
+
+        editClearButton.setOnAction(event -> clearForEdit());
 
 
         //For remove movie Pane
@@ -211,11 +203,7 @@ public class MoviesController {
             int selectedId = selectedMovie.getId_filmu();
             String selectedTitle = selectedMovie.getTytul();
             String movieDescription = retrieveMovieDescriptionFromDatabase(selectedId, selectedTitle);
-            if (movieDescription != null) {
-                textAreaMovieDesc.setText(movieDescription);
-            } else {
-                textAreaMovieDesc.setText("Movie description not available.");
-            }
+            textAreaMovieDesc.setText(Objects.requireNonNullElse(movieDescription, "Movie description not available."));
         });
 
             // Add event handler for remove button
@@ -241,11 +229,25 @@ public class MoviesController {
 
     //For add movie Pane
 
+
     @FXML
+    private void clearAddMovie(){
+
+        Image defaultImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/org/example/icons/image_default.png")));
+        coverAddMovie.setImage(defaultImage);
+        movieTitleInput.setText(null);
+        movieGenreInput.setValue(null);
+        movieLengthInput.setText(null);
+        movieScoreInput.setText(null);
+        movieDescInput.setText(null);
+        moviePriceInput.setText(null);
+    }
+
+
     private void loadMovieCoverImg(ImageView imageView) {
         File file = fileChooser.showOpenDialog(movieCoverButton.getScene().getWindow());
         if (file != null) {
-            try (InputStream inputStream = new FileInputStream(file)) {
+            try (InputStream ignored = new FileInputStream(file)) {
                 BufferedImage bufferedImage = ImageIO.read(file);
                 ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImage, "png", byteOutputStream);
@@ -263,8 +265,7 @@ public class MoviesController {
         }
     }
 
-    @FXML
-    private void SendMovieToDB() {
+    private void sendMovieToDB() {
         String selectedGenre = movieGenreInput.getValue();
         int genreId = retrieveGenreIdFromDatabase(selectedGenre);
 
@@ -383,15 +384,31 @@ public class MoviesController {
     //Edit movie functions
 
     @FXML
-    private void populateEditMovieList() {
+    private void clearEditMovie(){
+
+        clearForEdit();
+
         List<MovieAdapter> movieShowIds = retrieveMovieTitlesFromDatabase();
         editMovieList.getItems().clear(); // Clear the choice box before adding new items
 
         for (MovieAdapter movieShowId : movieShowIds) {
             editMovieList.getItems().add(String.valueOf(movieShowId));
         }
+    }
 
-        editMovieGenreInput.setItems(genreList);
+    private void clearForEdit(){
+        Image defaultImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/org/example/icons/image_default.png")));
+        coverEditMovie.setImage(defaultImage);
+        editMovieList.setValue(null);
+        editMovieTitleInput.setText(null);
+        editMovieGenreInput.setValue(null);
+        editMovieLengthInput.setText(null);
+        editMovieScoreInput.setText(null);
+        editMovieDescInput.setText(null);
+        editMoviePriceInput.setText(null);
+    }
+
+    private void populateEditMovieList() {
 
         editMovieList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             String selectedMovieShowID = String.valueOf(newValue);
@@ -415,30 +432,34 @@ public class MoviesController {
                 }
 
                 byte[] cover = selectedMovie.getOkladka();
-                System.out.println("Po populacji: " + cover);
 
-                Image image = convertByteArrayToImage(cover);
-                coverEditMovie.setImage(image);
-
+                editMovieTitleInput.setText(String.valueOf(selectedMovie.getTytul()));
                 editMovieLengthInput.setText(String.valueOf(selectedMovie.getCzas_trwania()));
                 editMovieScoreInput.setText(String.valueOf(selectedMovie.getOcena()));
                 editMovieDescInput.setText(selectedMovie.getOpis());
                 editMoviePriceInput.setText(String.valueOf(selectedMovie.getCena()));
+
+                if (cover != null){
+                    Image image = convertByteArrayToImage(cover);
+                    coverEditMovie.setImage(image);
+                }
+
             }
         });
     }
 
-    private void updateMovieInDB(int movieId, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
+    private void updateMovieInDB(int movieId,String title, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
-            PreparedStatement statement = connection.prepareStatement("UPDATE film SET czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
-            statement.setString(1, length);
-            statement.setString(2, score);
-            statement.setString(3, description);
-            statement.setInt(4, genreId);
-            statement.setBytes(5, coverImg);
-            statement.setDouble(6, price);
-            statement.setInt(7, movieId);
+            PreparedStatement statement = connection.prepareStatement("UPDATE film SET tytul = ?, czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
+            statement.setString(1, title);
+            statement.setString(2, length);
+            statement.setString(3, score);
+            statement.setString(4, description);
+            statement.setInt(5, genreId);
+            statement.setBytes(6, coverImg);
+            statement.setDouble(7, price);
+            statement.setInt(8, movieId);
 
             int rowsAffected = statement.executeUpdate();
 
@@ -485,6 +506,7 @@ public class MoviesController {
     @FXML
     private void populateMovieTitles() {
         List<MovieAdapter> movieTitles = retrieveMovieTitlesFromDatabase();
+        choiceRemoveMovieTitle.getItems().clear();
         choiceRemoveMovieTitle.getItems().addAll(movieTitles);
     }
 
@@ -540,8 +562,7 @@ public class MoviesController {
         return movieTitles;
     }
 
-    private boolean deleteMovieFromDatabase(int movieId) {
-        boolean success = false;
+    private void deleteMovieFromDatabase(int movieId) {
 
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
@@ -553,7 +574,6 @@ public class MoviesController {
             int rowsDeleted = preparedStatement.executeUpdate();
 
             if (rowsDeleted > 0) {
-                success = true;
                 System.out.println("Rekord został usunięty!");
             }
 
@@ -563,7 +583,6 @@ public class MoviesController {
             e.printStackTrace();
         }
 
-        return success;
     }
 
 
@@ -610,21 +629,9 @@ public class MoviesController {
         dialogPane.getStyleClass().add("my-dialog-pane");
     }
 
-    private byte[] convertImageToByteArray(Image image) {
-        int width = (int) image.getWidth();
-        int height = (int) image.getHeight();
-        byte[] buffer = new byte[width * height * 4];
-
-        PixelReader pixelReader = image.getPixelReader();
-        pixelReader.getPixels(0, 0, width, height, WritablePixelFormat.getByteBgraInstance(), buffer, 0, width * 4);
-
-        return buffer;
-    }
-
     private Image convertByteArrayToImage(byte[] byteArray) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
-        Image image = new Image(inputStream);
-        return image;
+        return new Image(inputStream);
     }
 
     @FXML
