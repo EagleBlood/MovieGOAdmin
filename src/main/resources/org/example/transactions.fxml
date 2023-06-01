@@ -31,15 +31,15 @@
                         <TableColumn fx:id="nr_rezerwacjiCol" prefWidth="75.0" text="Numer zamówienia" />
                         <TableColumn fx:id="tytulCol" prefWidth="75.0" text="Tytuł filmu" />
                         <TableColumn fx:id="loginCol" prefWidth="75.0" text="Użytkownik" />
-                        <TableColumn fx:id="ocenaCol" prefWidth="75.0" text="Ilość biletów" />
-                        <TableColumn fx:id="opisCol" prefWidth="75.0" text="Miejsca" />
-                        <TableColumn fx:id="id_gatunkuCol" prefWidth="75.0" text="Wartość zamówienia" />
+                        <TableColumn fx:id="id_biletuCol" prefWidth="75.0" text="Ilość biletów" />
+                        <TableColumn fx:id="miejscaCol" prefWidth="75.0" text="Miejsca" />
+                        <TableColumn fx:id="cenaCol" prefWidth="75.0" text="Wartość zamówienia" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                      <Button fx:id="buttonRemoveData" mnemonicParsing="false" text="Wyświetl transakcje">
+                      <Button fx:id="buttonLoadDataFromDB" mnemonicParsing="false" text="Wyświetl transakcje">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
