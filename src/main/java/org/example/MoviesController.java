@@ -7,6 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.WritablePixelFormat;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import org.example.adapters.LoginCredentials;
@@ -168,9 +170,9 @@ public class MoviesController {
             String description = editMovieDescInput.getText();
             Double price = Double.parseDouble(editMoviePriceInput.getText());
             String genre = editMovieGenreInput.getValue();
+            imageData = convertImageToByteArray(coverEditMovie.getImage());
 
-
-            if (title != null && selectedMovie != null && length != null && score != null && description != null && genre != null && imageData != null) {
+            if (title != null && selectedMovie != null && length != null && score != null && description != null && genre != null) {
                 int movieId = retrieveMovieIdFromDB(selectedMovie);
                 int genreId = retrieveGenreIdFromDatabase(genre);
 
@@ -180,7 +182,7 @@ public class MoviesController {
 
                 clearEditMovie();
             } else {
-                showAlert();
+                showPopup("Popraw dane - obraz");
             }
         });
 
@@ -448,7 +450,7 @@ public class MoviesController {
         });
     }
 
-    private void updateMovieInDB(int movieId,String title, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
+    private void updateMovieInDB(int movieId, String title, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             PreparedStatement statement = connection.prepareStatement("UPDATE film SET tytul = ?, czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
@@ -618,20 +620,20 @@ public class MoviesController {
         }
     }
 
-    private void showAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Błąd");
-        alert.setHeaderText("Nie wybrano filmu do edycji.");
-        alert.setContentText("Wybierz film z listy.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-    }
-
     private Image convertByteArrayToImage(byte[] byteArray) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
         return new Image(inputStream);
+    }
+
+    private byte[] convertImageToByteArray(Image image) {
+        int width = (int) image.getWidth();
+        int height = (int) image.getHeight();
+        byte[] buffer = new byte[width * height * 4];
+
+        PixelReader pixelReader = image.getPixelReader();
+        pixelReader.getPixels(0, 0, width, height, WritablePixelFormat.getByteBgraInstance(), buffer, 0, width * 4);
+
+        return buffer;
     }
 
     @FXML
