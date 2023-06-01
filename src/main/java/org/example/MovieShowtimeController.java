@@ -92,6 +92,7 @@ public class MovieShowtimeController {
 
         buttonLoadDataMovieShowtime.setOnAction(event -> {
             List<MovieShowtimeAdapter> movieShowtimeList = retrieveMovieShowtimeFromDB();
+            tableDB.getItems().clear();
             tableDB.getItems().setAll(movieShowtimeList);
 
             buttonLoadDataMovieShowtime.setText("Aktualizuj");

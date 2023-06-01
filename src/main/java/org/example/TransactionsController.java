@@ -49,6 +49,7 @@ public class TransactionsController {
         buttonLoadDataFromDB.setOnAction(actionEvent -> {
             // Load data from the database
             List<TransactionsAdapter> reservations = loadDataFromDatabase();
+            tableDB.getItems().clear();
 
             // Populate the table with data
             tableDB.getItems().addAll(reservations);
@@ -61,7 +62,7 @@ public class TransactionsController {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT rezerwacje.nr_rezerwacji, film.tytul, uzytkownicy.login, bilet.id_rezer, GROUP_CONCAT(CONCAT(miejsca.rzad, '-', miejsca.fotel)) AS miejsca, bilet.cena FROM bilet " +
+            ResultSet resultSet = statement.executeQuery("SELECT rezerwacje.nr_rezerwacji, film.tytul, uzytkownicy.login, COUNT(bilet.id_rezer) AS id_rezer, GROUP_CONCAT(CONCAT(miejsca.rzad, '-', miejsca.fotel)) AS miejsca, SUM(bilet.cena) AS cena FROM bilet " +
                     "INNER JOIN rezerwacje ON bilet.id_rezer = rezerwacje.id_rezer " +
                     "INNER JOIN uzytkownicy ON rezerwacje.id_uzyt = uzytkownicy.id_uzyt " +
                     "INNER JOIN miejsca ON bilet.id_miejsca = miejsca.id_miejsca " +
