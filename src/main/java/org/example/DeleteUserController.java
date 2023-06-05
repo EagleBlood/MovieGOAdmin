@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class DeleteUserController {
@@ -33,41 +34,16 @@ public class DeleteUserController {
         buttonRemoveUser.setOnAction(event -> {
             String selectedUser = choiceUser.getValue();
 
-            Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-            confirmationDialog.setTitle("Potwierdzenie");
-            confirmationDialog.setHeaderText("Czy na pewno chcesz usunąć rekord?");
-            confirmationDialog.setContentText("Ta operacja jest nieodwracalna.");
-
-            Optional<ButtonType> result = confirmationDialog.showAndWait();
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-
+            showAlert(() ->{
                 deleteUserFromDatabase(selectedUser);
                 choiceUser.getItems().clear();
                 populateUsers();
 
-                Stage popupStage = new Stage();
-                popupStage.initModality(Modality.APPLICATION_MODAL);
+                showPopup("Użytkownik został usunięty!");
+                choiceUser.setValue(null);
+            });
 
-                Label messageLabel = new Label("Użytkownik został usunięty!");
-                showPopup(popupStage, messageLabel);
-            }
         });
-    }
-
-    private void showPopup(Stage popupStage, Label messageLabel) {
-        messageLabel.setAlignment(Pos.CENTER);
-
-        Button closeButton = new Button("Zamknij");
-        closeButton.setOnAction(e -> popupStage.close());
-
-        VBox vbox = new VBox(10);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().addAll(messageLabel, closeButton);
-
-        Scene scene = new Scene(vbox, 200, 100);
-        popupStage.setScene(scene);
-
-        popupStage.showAndWait();
     }
 
     private void populateUsers() {
@@ -123,6 +99,34 @@ public class DeleteUserController {
         }
 
         return success;
+    }
+
+    private void showPopup(String message) {
+
+        Alert alert = new Alert(Alert.AlertType.NONE, message, ButtonType.OK);
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
+        dialogPane.getStyleClass().add("my-dialog-pane");
+
+        alert.show();
+
+    }
+
+    private void showAlert(Runnable onConfirmation) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Potwierdzenie");
+        alert.setHeaderText("Czy na pewno chcesz usunąć film?");
+        alert.setContentText("Ta operacja jest nieodwracalna.");
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
+        dialogPane.getStyleClass().add("my-dialog-pane");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            onConfirmation.run();
+        }
     }
 
 

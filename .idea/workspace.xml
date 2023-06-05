@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="FINALLLLYYYYYYYYYYYYYY EditMovie finished">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adapters/TransactionsAdapter.java" afterDir="false" />
+    <list default="true" id="29ea835e-203c-40fb-ae2c-872465c0967c" name="Changes" comment="deleteUser.fxmlfinished, movieShowtime.fxml renamed">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MoviesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/transactions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DeleteUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="MovieGoAdmin" />
+      <module name="MovieGOAdmin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.adapters.*" />
