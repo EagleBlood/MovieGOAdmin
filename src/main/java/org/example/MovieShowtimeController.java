@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import static org.example.GlobFun.showAlert;
+import static org.example.GlobFun.showPopup;
+
 public class MovieShowtimeController {
 
     private final String dbUrl = LoginCredentials.getDbUrl();
@@ -128,8 +131,7 @@ public class MovieShowtimeController {
                 choiceEditTimeList.setValue(null);
                 editDateInput.setValue(null);
             } else {
-
-                showAlert();
+                showPopup("Nie wybrano seansu do edycji!");
             }
         });
 
@@ -153,17 +155,9 @@ public class MovieShowtimeController {
 
         });
 
-
         populateChoiceBoxes();
         populateEditMovieShowList();
     }
-
-
-
-
-
-
-
 
 
 
@@ -367,45 +361,6 @@ public class MovieShowtimeController {
 
 
     //Global functions
-    private void showPopup(String message) {
-
-        Alert alert = new Alert(Alert.AlertType.NONE, message, ButtonType.OK);
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-
-        alert.show();
-
-    }
-
-    private void showAlert(Runnable onConfirmation) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potwierdzenie");
-        alert.setHeaderText("Czy na pewno chcesz usunąć rekord?");
-        alert.setContentText("Ta operacja jest nieodwracalna.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            onConfirmation.run();
-        }
-    }
-
-    private void showAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Błąd");
-        alert.setHeaderText("Nie wybrano seansu do edycji.");
-        alert.setContentText("Wybierz seans z listy.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-    }
-
     @FXML
     private void backHome() throws IOException {
         App.setRoot("home");

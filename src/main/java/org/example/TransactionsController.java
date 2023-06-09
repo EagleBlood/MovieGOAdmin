@@ -95,16 +95,6 @@ public class TransactionsController {
         return transactions;
     }
 
-
-
-
-
-
-
-
-
-
-
     @FXML
     private void backHome() throws IOException {
         App.setRoot("home");

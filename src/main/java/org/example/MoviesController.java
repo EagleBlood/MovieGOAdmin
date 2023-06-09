@@ -21,6 +21,9 @@ import java.io.*;
 import java.sql.*;
 import java.util.*;
 
+import static org.example.GlobFun.showAlert;
+import static org.example.GlobFun.showPopup;
+
 public class MoviesController {
 
     //GLOBAL
@@ -151,9 +154,7 @@ public class MoviesController {
             //DB action
         buttonSendToDB.setOnAction(event -> {
             sendMovieToDB();
-
             showPopup("Film został dodany.");
-
             clearAddMovie();
         });
 
@@ -179,7 +180,6 @@ public class MoviesController {
                 updateMovieInDB(movieId, title, length, score, description, genreId, imageData, price);
 
                 showPopup("Film został zaktualizowany");
-
                 clearEditMovie();
             } else {
                 showPopup("Popraw dane - obraz");
@@ -591,35 +591,6 @@ public class MoviesController {
 
 
     // GLOBAL
-
-    private void showPopup(String message) {
-
-        Alert alert = new Alert(Alert.AlertType.NONE, message, ButtonType.OK);
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-
-        alert.show();
-
-    }
-
-    private void showAlert(Runnable onConfirmation) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potwierdzenie");
-        alert.setHeaderText("Czy na pewno chcesz usunąć film?");
-        alert.setContentText("Ta operacja jest nieodwracalna.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            onConfirmation.run();
-        }
-    }
-
     private Image convertByteArrayToImage(byte[] byteArray) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
         return new Image(inputStream);
