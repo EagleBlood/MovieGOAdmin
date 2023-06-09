@@ -130,6 +130,7 @@ public class MoviesController {
 
         buttonLoadData.setOnAction(event -> {
             List<MovieDetailsAdapter> movieDetailsAdapterList = retrieveMoviesFromDB();
+            tableDB.getItems().clear();
             tableDB.setItems(FXCollections.observableArrayList(movieDetailsAdapterList));
 
             buttonLoadData.setText("Aktualizuj");
