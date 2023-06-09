@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.example.GlobFun.showAlert;
+import static org.example.GlobFun.showPopup;
+
 public class DeleteUserController {
 
     private String dbUrl = LoginCredentials.getDbUrl();
@@ -33,41 +36,14 @@ public class DeleteUserController {
         buttonRemoveUser.setOnAction(event -> {
             String selectedUser = choiceUser.getValue();
 
-            Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-            confirmationDialog.setTitle("Potwierdzenie");
-            confirmationDialog.setHeaderText("Czy na pewno chcesz usunąć rekord?");
-            confirmationDialog.setContentText("Ta operacja jest nieodwracalna.");
+            showAlert(() -> {
+                    deleteUserFromDatabase(selectedUser);
+                    choiceUser.getItems().clear();
+                    populateUsers();
 
-            Optional<ButtonType> result = confirmationDialog.showAndWait();
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-
-                deleteUserFromDatabase(selectedUser);
-                choiceUser.getItems().clear();
-                populateUsers();
-
-                Stage popupStage = new Stage();
-                popupStage.initModality(Modality.APPLICATION_MODAL);
-
-                Label messageLabel = new Label("Użytkownik został usunięty!");
-                showPopup(popupStage, messageLabel);
-            }
+                    showPopup("Usunięto użytkownika");
+            });
         });
-    }
-
-    private void showPopup(Stage popupStage, Label messageLabel) {
-        messageLabel.setAlignment(Pos.CENTER);
-
-        Button closeButton = new Button("Zamknij");
-        closeButton.setOnAction(e -> popupStage.close());
-
-        VBox vbox = new VBox(10);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().addAll(messageLabel, closeButton);
-
-        Scene scene = new Scene(vbox, 200, 100);
-        popupStage.setScene(scene);
-
-        popupStage.showAndWait();
     }
 
     private void populateUsers() {
