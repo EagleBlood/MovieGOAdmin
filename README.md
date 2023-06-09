@@ -9,9 +9,13 @@ Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie
 
 ## Funkcjonalność
 
-https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559
+By  kinem musisz zalogować się do bazy danych poprzez menu logowania
 
+![img1](https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559 "Ekran logowania")
 
+Po udanym logowaniu możemy rozpocząć zarządzanie kinem.
+
+![img2](https://media.discordapp.net/attachments/306034382588870657/1116746793401716767/1.PNG?width=798&height=559 "Menu główne")
 
 ![img3](https://media.discordapp.net/attachments/306034382588870657/1116746792332181554/2.PNG?width=798&height=559 "Zakładka do wyświetlania filmów z bazy")
 ![img4](https://media.discordapp.net/attachments/306034382588870657/1116746792604798976/3.PNG?width=798&height=559 "Ekran edycji istniejącego filmu z bazy")
@@ -26,16 +30,6 @@ https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/
 - Sklonuj repozytorium projektu z GitHuba do lokalnego katalogu na swoim komputerze.
 - Uruchom program w wybranym środowkisku JDK
 
-<br>
-
-## Opis
-By  kinem musisz zalogować się do bazy danych poprzez menu logowania
-
-![img1](https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559 "Ekran logowania")
-
-Po udanym logowaniu możemy rozpocząć zarządzanie kinem.
-
-![img2](https://media.discordapp.net/attachments/306034382588870657/1116746793401716767/1.PNG?width=798&height=559 "Menu główne")
 
 <br>
 
