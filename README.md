@@ -26,7 +26,7 @@ Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
 Zakładka filmy:
 <table>
   <tr>
-    <td align="center"><img src="https://cdn.discordapp.com/attachments/306034382588870657/1117055461502492732/1.1.PNG" alt="Zakładka do wyświetlania filmów"/></td>
+    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240345231481/1.1.PNG?width=705&height=494" alt="Zakładka do wyświetlania filmów"/></td>
     <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240638828606/1.2.PNG?width=705&height=494" alt="Zakładka do dodawania nowego filmu"/></td>
   </tr>
   <tr>
