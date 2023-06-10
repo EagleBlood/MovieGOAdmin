@@ -9,16 +9,29 @@ Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie
 
 ## Funkcjonalność
 
-By  kinem musisz zalogować się do bazy danych poprzez menu logowania
-
-![img1](https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559 "Ekran logowania")
-
+By połączyć się z bazą kina musisz zalogować się do bazy danych poprzez menu logowania.
+<p align="center">
+  ![img1](https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559 "Ekran logowania")
+</p>
 Po udanym logowaniu możemy rozpocząć zarządzanie kinem.
 
 ![img2](https://media.discordapp.net/attachments/306034382588870657/1116746793401716767/1.PNG?width=798&height=559 "Menu główne")
 
-![img3](https://media.discordapp.net/attachments/306034382588870657/1116746792332181554/2.PNG?width=798&height=559 "Zakładka do wyświetlania filmów z bazy")
-![img4](https://media.discordapp.net/attachments/306034382588870657/1116746792604798976/3.PNG?width=798&height=559 "Ekran edycji istniejącego filmu z bazy")
+Zakładka filmy:
+
+<table>
+  <tr>
+    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1116746792332181554/2.PNG?width=798&height=559" alt="Zakładka do wyświetlania filmów z bazy" /></td>
+    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1116746792604798976/3.PNG?width=798&height=559" alt="Ekran edycji istniejącego filmu z bazy" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="image3.jpg" alt="Image 3" /></td>
+    <td align="center"><img src="image4.jpg" alt="Image 4" /></td>
+  </tr>
+</table>
+
+
+Zakładka seanse:
 ![img5](https://media.discordapp.net/attachments/306034382588870657/1116746792885825667/4.PNG?width=798&height=559 "Zakładka do wyświetlania seansów z bazy danych")
 ![img6](https://media.discordapp.net/attachments/306034382588870657/1116746793166848000/5.png?width=799&height=559 "Zakładka do dodawania seansów")
 
