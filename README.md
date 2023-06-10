@@ -1,5 +1,5 @@
 # MovieGOAdmin
-Głównym celem projektu jest stworzenie systemu informatycznego dla nowego kina. Administrator otrzymają dostęp do pewnych danych zawartych w bazie danych kina, między innymi będzie mógł wyświetlać/dodawać/edytować/usuwać filmy jak i seanse, usuwać użytkowników z bazy oraz wyświetlać historie zakupów dokonanych przez klientów kina. 
+Głównym celem projektu jest stworzenie systemu informatycznego dla nowego kina. Administrator otrzyma dostęp do pewnych danych zawartych w bazie danych kina, między innymi będzie mógł wyświetlać/dodawać/edytować/usuwać filmy jak i seanse, usuwać użytkowników z bazy oraz wyświetlać historie zakupów dokonanych przez klientów kina. 
 
 Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie mógł lepiej i efektywniej nim zarządzać poprzez monitorowanie sprzedaży, zmianę ceny biletów czy ulepszanie infrastruktury.
 <br>
