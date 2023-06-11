@@ -81,3 +81,5 @@ Zakładka transakcje:<br>
 * Maven
 * Java (v. 19.0.1)
 * mysql-connector-java (v. 8.0.32)
+* org.openjfx.javafx - controls (v. 20.0.1)
+* org.openjfx.javafx - fxml (v. 19.0.2.1)
