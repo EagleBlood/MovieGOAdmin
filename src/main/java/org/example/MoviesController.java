@@ -2,6 +2,7 @@ package org.example;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+
+import static org.example.GlobFun.showAlert;
 
 public class MoviesController {
 
@@ -572,33 +575,6 @@ public class MoviesController {
 
         alert.show();
 
-    }
-
-    private void showAlert(Runnable onConfirmation) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potwierdzenie");
-        alert.setHeaderText("Czy na pewno chcesz usunąć film?");
-        alert.setContentText("Ta operacja jest nieodwracalna.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            onConfirmation.run();
-        }
-    }
-
-    private void showAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Błąd");
-        alert.setHeaderText("Nie wybrano filmu do edycji.");
-        alert.setContentText("Wybierz film z listy.");
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
-        dialogPane.getStyleClass().add("my-dialog-pane");
     }
 
     private byte[] convertImageToByteArray(Image image) {

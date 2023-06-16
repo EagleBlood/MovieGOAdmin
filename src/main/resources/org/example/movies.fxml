@@ -75,7 +75,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab onSelectionChanged="#clearAddMovie" text="Dodaj film">
+                        <Tab text="Dodaj film">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="600.0">
                                  <children>
@@ -185,7 +185,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab onSelectionChanged="#clearEditMovie" text="Edytuj film">
+                        <Tab text="Edytuj film">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
