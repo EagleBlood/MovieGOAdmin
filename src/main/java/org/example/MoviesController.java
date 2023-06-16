@@ -166,6 +166,8 @@ public class MoviesController {
 
         //For edit
 
+        populateEditMovieList();
+
         editMovieButton.setOnAction(event -> {
             String selectedMovie = editMovieList.getValue();
             String length = editMovieLengthInput.getText();
@@ -209,30 +211,33 @@ public class MoviesController {
             // Add event handler for choice box selection change
         choiceRemoveMovieTitle.setOnAction(event -> {
             MovieAdapter selectedMovie = choiceRemoveMovieTitle.getValue();
-            int selectedId = selectedMovie.getId_filmu();
-            String selectedTitle = selectedMovie.getTytul();
-            String movieDescription = retrieveMovieDescriptionFromDatabase(selectedId, selectedTitle);
-            if (movieDescription != null) {
-                textAreaMovieDesc.setText(movieDescription);
-            } else {
-                textAreaMovieDesc.setText("Movie description not available.");
+            if (selectedMovie != null) {
+                int selectedId = selectedMovie.getId_filmu();
+                String selectedTitle = selectedMovie.getTytul();
+                String movieDescription = retrieveMovieDescriptionFromDatabase(selectedId, selectedTitle);
+                if (movieDescription != null) {
+                    textAreaMovieDesc.setText(movieDescription);
+                } else {
+                    textAreaMovieDesc.setText("Movie description not available.");
+                }
             }
         });
 
             // Add event handler for remove button
         removeMovieButton.setOnAction(event -> {
             MovieAdapter selectedMovie = choiceRemoveMovieTitle.getValue();
-            int selectedId = selectedMovie.getId_filmu();
+            if (selectedMovie != null) {
+                int selectedId = selectedMovie.getId_filmu();
 
-            showAlert(() ->{
-                deleteMovieFromDatabase(selectedId);
-                choiceRemoveMovieTitle.getItems().clear();
-                populateMovieTitles();
+                showAlert(() -> {
+                    deleteMovieFromDatabase(selectedId);
+                    choiceRemoveMovieTitle.getItems().clear();
+                    populateMovieTitles();
 
-                showPopup("Film został usunięty!");
-                choiceRemoveMovieTitle.setValue(null);
-            });
-
+                    showPopup("Film został usunięty!");
+                    choiceRemoveMovieTitle.setValue(null);
+                });
+            }
         });
 
     }
@@ -478,7 +483,7 @@ public class MoviesController {
 
     @FXML
     private void populateMovieTitles() {
-        List<MovieAdapter> movieTitles = retrieveMovieTitlesFromDatabase();
+        List<MovieAdapter> movieTitles = retrieveMovieTitlesFromDatabaseForRemoval();
         choiceRemoveMovieTitle.getItems().addAll(movieTitles);
     }
 
@@ -509,6 +514,32 @@ public class MoviesController {
 
         return movieDescription;
     }
+
+
+    public List<MovieAdapter> retrieveMovieTitlesFromDatabaseForRemoval() {
+        List<MovieAdapter> movieTitles = new ArrayList<>();
+
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT id_filmu, tytul FROM film WHERE id_filmu NOT IN (SELECT id_filmu FROM seanse)");
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_filmu");
+                String title = resultSet.getString("tytul");
+                movieTitles.add(new MovieAdapter(id, title));
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return movieTitles;
+    }
+
 
     public List<MovieAdapter> retrieveMovieTitlesFromDatabase() {
         List<MovieAdapter> movieTitles = new ArrayList<>();
