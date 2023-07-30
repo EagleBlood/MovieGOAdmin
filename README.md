@@ -1,7 +1,7 @@
 # MovieGOAdmin
-Głównym celem projektu jest stworzenie systemu informatycznego dla nowego kina. Administrator otrzyma dostęp do pewnych danych zawartych w bazie danych kina, między innymi będzie mógł wyświetlać/dodawać/edytować/usuwać filmy jak i seanse, usuwać użytkowników z bazy oraz wyświetlać historie zakupów dokonanych przez klientów kina. 
+The main goal of the project is to create an IT system for a new cinema. The administrator will receive access to certain data stored in the cinema's database, including the ability to view/add/edit/delete movies and screenings, remove users from the database, and view the purchase history made by cinema customers.
 
-Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie mógł lepiej i efektywniej nim zarządzać poprzez monitorowanie sprzedaży, zmianę ceny biletów czy ulepszanie infrastruktury.
+With these improvements for cinema staff, the owner of the new cinema will be able to manage it better and more efficiently by monitoring sales, changing ticket prices, and improving infrastructure.
 <br>
 <br>
 
@@ -9,21 +9,21 @@ Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie
 
 ## Funkcjonalność
 
-By połączyć się z bazą kina musisz zalogować się do bazy danych poprzez menu logowania.<br>
+To connect to the cinema database, you need to log in to the database through the login menu.<br>
 <p align="center">
   <img src="https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559" alt="Ekran logowania" />
 </p>
 <br>
 
 
-Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
+After successful login, we can begin managing the cinema.<br>
 <p align="center">
   <img src="https://media.discordapp.net/attachments/306034382588870657/1116746793401716767/1.PNG?width=798&height=559" alt="Menu główne" />
 </p>
 <br>
 
 
-Zakładka filmy:
+Movie section:<br>
 <table>
   <tr>
     <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240345231481/1.1.PNG?width=705&height=494" alt="Zakładka do wyświetlania filmów"/></td>
@@ -37,7 +37,7 @@ Zakładka filmy:
 <br>
 
 
-Zakładka seanse:<br>
+Screenings section:<br>
 <table>
   <tr>
     <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1116746792885825667/4.PNG?width=798&height=559" alt="Zakładka do wyświetlania seansów" /></td>
@@ -50,16 +50,14 @@ Zakładka seanse:<br>
 </table>
 <br>
 
-
-Zakładka usuń użytkownika:<br>
+Remove user section:<br>
 <p align="center">
   <img src="https://media.discordapp.net/attachments/1078655641259888680/1117048353298067496/10.PNG?width=705&height=494" alt="Ekran do usuwania użytkowników" />
 </p>
 <br>
 
 
-
-Zakładka transakcje:<br>
+Transactions tab:<br>
 <p align="center">
   <img src="https://media.discordapp.net/attachments/1078655641259888680/1117048351213498469/11.PNG?width=705&height=494" alt="Ekran do wyświetlania transkacji użytkowników" />
 </p>
@@ -68,16 +66,16 @@ Zakładka transakcje:<br>
 
 
 
-## Instalacja
-- Upewnij się, że masz zainstalowaną Javę na swoim komputerze.
-- Sklonuj repozytorium projektu z GitHuba do lokalnego katalogu na swoim komputerze.
-- Uruchom program w wybranym środowkisku JDK
+## Installation:
+- Make sure you have Java installed on your computer.
+- Clone the project repository from GitHub to a local directory on your computer.
+- Run the program in your chosen JDK environment.
 <br>
 <br>
 
 
 
-## Narzędzia oraz biblioteki:
+## Tools and libraries:
 * Maven
 * Java (v. 19.0.1)
 * mysql-connector-java (v. 8.0.32)
