@@ -76,7 +76,7 @@ Zakładka transakcje:<br>
 
 
 
-## Narzędzia oraz biblioteki:
+## Narzędzia oraz biblioteki
 * Maven
 * Java (v. 19.0.1)
 * mysql-connector-java (v. 8.0.32)
