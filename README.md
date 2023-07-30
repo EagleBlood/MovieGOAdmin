@@ -7,7 +7,7 @@ With these improvements for cinema staff, the owner of the new cinema will be ab
 
 
 
-## Funkcjonalność
+## Functionality
 
 To connect to the cinema database, you need to log in to the database through the login menu.<br>
 <p align="center">
@@ -66,7 +66,7 @@ Transactions tab:<br>
 
 
 
-## Installation:
+## Installation
 - Make sure you have Java installed on your computer.
 - Clone the project repository from GitHub to a local directory on your computer.
 - Run the program in your chosen JDK environment.
@@ -75,7 +75,7 @@ Transactions tab:<br>
 
 
 
-## Tools and libraries:
+## Tools and libraries
 * Maven
 * Java (v. 19.0.1)
 * mysql-connector-java (v. 8.0.32)
