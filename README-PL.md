@@ -11,14 +11,14 @@ Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie
 
 By połączyć się z bazą kina musisz zalogować się do bazy danych poprzez menu logowania.<br>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/306034382588870657/1116748021749796874/log.PNG?width=798&height=559" alt="Ekran logowania" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/1.PNG" alt="Ekran logowania" />
 </p>
 <br>
 
 
 Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/306034382588870657/1116746793401716767/1.PNG?width=798&height=559" alt="Menu główne" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/2.PNG" alt="Menu główne" />
 </p>
 <br>
 
@@ -26,12 +26,12 @@ Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
 Zakładka filmy:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240345231481/1.1.PNG?width=705&height=494" alt="Zakładka do wyświetlania filmów"/></td>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240638828606/1.2.PNG?width=705&height=494" alt="Zakładka do dodawania nowego filmu"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/3.PNG" alt="Zakładka do wyświetlania filmów"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/4.PNG" alt="Zakładka do dodawania nowego filmu"/></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055240945021018/1.3.PNG?width=705&height=494" alt="Ekran edycji istniejącego filmu" /></td>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1117055241171509288/1.4.PNG?width=705&height=494" alt="Zakładka do usuwania filmów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/5.PNG" alt="Ekran edycji istniejącego filmu" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/6.PNG" alt="Zakładka do usuwania filmów" /></td>
   </tr>
 </table>
 <br>
@@ -40,12 +40,12 @@ Zakładka filmy:<br>
 Zakładka seanse:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1116746792885825667/4.PNG?width=798&height=559" alt="Zakładka do wyświetlania seansów" /></td>
-    <td align="center"><img src="https://media.discordapp.net/attachments/306034382588870657/1116746793166848000/5.png?width=799&height=559" alt="Zakładka do dodawania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/7.PNG" alt="Zakładka do wyświetlania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/8.PNG" alt="Zakładka do dodawania seansów" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://media.discordapp.net/attachments/1078655641259888680/1117048352706666497/8.PNG?width=705&height=494" alt="Ekran edycji seansów" /></td>
-    <td align="center"><img src="https://media.discordapp.net/attachments/1078655641259888680/1117048353000263730/9.PNG?width=705&height=494" alt="Zakładka do usuwania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/9.PNG" alt="Ekran edycji seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/10.PNG" alt="Zakładka do usuwania seansów" /></td>
   </tr>
 </table>
 <br>
@@ -53,14 +53,14 @@ Zakładka seanse:<br>
 
 Zakładka usuń użytkownika:<br>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1078655641259888680/1117048353298067496/10.PNG?width=705&height=494" alt="Ekran do usuwania użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/11.PNG" alt="Ekran do usuwania użytkowników" />
 </p>
 <br>
 
 
 Zakładka transakcje:<br>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1078655641259888680/1117048351213498469/11.PNG?width=705&height=494" alt="Ekran do wyświetlania transkacji użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
 </p>
 <br>
 <br>
