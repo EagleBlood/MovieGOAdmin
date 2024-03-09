@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritablePixelFormat;
 import javafx.scene.text.Text;
@@ -15,8 +14,6 @@ import org.example.adapters.LoginCredentials;
 import org.example.adapters.MovieAdapter;
 import org.example.adapters.MovieDetailsAdapter;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
 import java.util.*;
@@ -54,10 +51,7 @@ public class MoviesController {
 
     //For add movie Pane
     @FXML
-    private Button movieCoverButton;
-    @FXML
     private Button buttonSendToDB;
-    private FileChooser fileChooser;
     @FXML
     private ChoiceBox<String> movieGenreInput;
     @FXML
@@ -71,7 +65,7 @@ public class MoviesController {
     @FXML
     private TextArea movieDescInput;
     @FXML
-    private ImageView coverAddMovie;
+    private TextField movieCoverInput;
     @FXML
     private Button clearButton;
 
@@ -90,11 +84,9 @@ public class MoviesController {
     @FXML
     private TextField editMoviePriceInput;
     @FXML
+    private TextField editMovieCoverInput;
+    @FXML
     private ChoiceBox<String> editMovieGenreInput;
-    @FXML
-    private ImageView coverEditMovie;
-    @FXML
-    private Button editMovieCoverButton;
     @FXML
     private Button editMovieButton;
     @FXML
@@ -138,16 +130,6 @@ public class MoviesController {
 
         //For add movie Pane
 
-        //Load img init
-        fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
-        );
-
-            //Load img
-        movieCoverButton.setOnAction(event -> loadMovieCoverImg(coverAddMovie));
-
             //List
         retrieveGenreNamesFromDatabase();
         movieGenreInput.setItems(genreList);
@@ -172,13 +154,13 @@ public class MoviesController {
             String description = editMovieDescInput.getText();
             Double price = Double.parseDouble(editMoviePriceInput.getText());
             String genre = editMovieGenreInput.getValue();
-            imageData = convertImageToByteArray(coverEditMovie.getImage());
+            String cover = editMovieCoverInput.getText();
 
             if (title != null && selectedMovie != null && length != null && score != null && description != null && genre != null) {
                 int movieId = retrieveMovieIdFromDB(selectedMovie);
                 int genreId = retrieveGenreIdFromDatabase(genre);
 
-                updateMovieInDB(movieId, title, length, score, description, genreId, imageData, price);
+                updateMovieInDB(movieId, title, length, score, description, genreId, cover, price);
 
                 showPopup("Film został zaktualizowany");
                 clearEditMovie();
@@ -190,9 +172,6 @@ public class MoviesController {
         populateEditMovieList();
         editMovieGenreInput.setItems(genreList);
 
-
-        //Load img
-        editMovieCoverButton.setOnAction(event -> loadMovieCoverImg(coverEditMovie));
 
         editClearButton.setOnAction(event -> clearForEdit());
 
@@ -236,8 +215,7 @@ public class MoviesController {
     @FXML
     private void clearAddMovie(){
 
-        Image defaultImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/org/example/icons/image_default.png")));
-        coverAddMovie.setImage(defaultImage);
+        movieCoverInput.setText(null);
         movieTitleInput.setText(null);
         movieGenreInput.setValue(null);
         movieLengthInput.setText(null);
@@ -246,27 +224,6 @@ public class MoviesController {
         moviePriceInput.setText(null);
     }
 
-
-    private void loadMovieCoverImg(ImageView imageView) {
-        File file = fileChooser.showOpenDialog(movieCoverButton.getScene().getWindow());
-        if (file != null) {
-            try (InputStream ignored = new FileInputStream(file)) {
-                BufferedImage bufferedImage = ImageIO.read(file);
-                ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
-                ImageIO.write(bufferedImage, "png", byteOutputStream);
-                imageData = byteOutputStream.toByteArray();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Handle the error gracefully
-            }
-
-            String filePath = file.getAbsolutePath();
-            Image image = new Image(new File(filePath).toURI().toString());
-
-            imageView.setImage(image);
-        }
-    }
 
     private void sendMovieToDB() {
         String selectedGenre = movieGenreInput.getValue();
@@ -279,6 +236,7 @@ public class MoviesController {
         double score = Double.parseDouble(scoreText);
         String description = movieDescInput.getText();
         String priceText = moviePriceInput.getText();
+        String coverText = movieCoverInput.getText();
         double price = Double.parseDouble(priceText);
 
         try {
@@ -289,7 +247,7 @@ public class MoviesController {
             statement.setDouble(3, score);
             statement.setString(4, description);
             statement.setInt(5, genreId);
-            statement.setBytes(6, imageData);
+            statement.setString(6, coverText);
             statement.setDouble(7, price);
 
             int rowsAffected = statement.executeUpdate();
@@ -364,7 +322,7 @@ public class MoviesController {
                 int czas_trwania = resultSet.getInt("czas_trwania");
                 double ocena = resultSet.getDouble("ocena");
                 String nazwa_gatunku = resultSet.getString("nazwa_gatunku");
-                byte[] okladka = resultSet.getBytes("okladka");
+                String okladka = resultSet.getString("okladka");
                 double cena = resultSet.getDouble("cena");
 
                 MovieDetailsAdapter movieDetailsAdapter = new MovieDetailsAdapter(tytul, opis, czas_trwania, ocena, nazwa_gatunku, okladka, cena);
@@ -400,14 +358,13 @@ public class MoviesController {
     }
 
     private void clearForEdit(){
-        Image defaultImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/org/example/icons/image_default.png")));
-        coverEditMovie.setImage(defaultImage);
         editMovieList.setValue(null);
         editMovieTitleInput.setText(null);
         editMovieGenreInput.setValue(null);
         editMovieLengthInput.setText(null);
         editMovieScoreInput.setText(null);
         editMovieDescInput.setText(null);
+        editMovieCoverInput.setText(null);
         editMoviePriceInput.setText(null);
     }
 
@@ -434,24 +391,18 @@ public class MoviesController {
                     }
                 }
 
-                byte[] cover = selectedMovie.getOkladka();
-
                 editMovieTitleInput.setText(String.valueOf(selectedMovie.getTytul()));
                 editMovieLengthInput.setText(String.valueOf(selectedMovie.getCzas_trwania()));
                 editMovieScoreInput.setText(String.valueOf(selectedMovie.getOcena()));
                 editMovieDescInput.setText(selectedMovie.getOpis());
                 editMoviePriceInput.setText(String.valueOf(selectedMovie.getCena()));
-
-                if (cover != null){
-                    Image image = convertByteArrayToImage(cover);
-                    coverEditMovie.setImage(image);
-                }
+                editMovieCoverInput.setText(String.valueOf(selectedMovie.getOkladka()));
 
             }
         });
     }
 
-    private void updateMovieInDB(int movieId, String title, String length, String score, String description, int genreId, byte[] coverImg, Double price) {
+    private void updateMovieInDB(int movieId, String title, String length, String score, String description, int genreId, String coverImg, Double price) {
         try {
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             PreparedStatement statement = connection.prepareStatement("UPDATE film SET tytul = ?, czas_trwania = ?, ocena = ?, opis = ?, id_gatunku = ?, okladka = ?, cena = ? WHERE id_filmu = ?");
@@ -460,7 +411,7 @@ public class MoviesController {
             statement.setString(3, score);
             statement.setString(4, description);
             statement.setInt(5, genreId);
-            statement.setBytes(6, coverImg);
+            statement.setString(6, coverImg);
             statement.setDouble(7, price);
             statement.setInt(8, movieId);
 

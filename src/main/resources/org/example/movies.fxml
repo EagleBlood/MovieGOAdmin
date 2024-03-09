@@ -2,7 +2,6 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -90,77 +89,46 @@
                                                 <Insets />
                                              </VBox.margin>
                                           </Text>
-                                          <GridPane hgap="20.0" prefHeight="377.0" prefWidth="560.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="372.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="168.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
+                                          <GridPane prefHeight="375.0" prefWidth="600.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="83.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.0" minWidth="10.0" prefWidth="286.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
                                              <children>
-                                                <GridPane prefHeight="375.0" prefWidth="600.0">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="83.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.0" minWidth="10.0" prefWidth="286.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Label text="Tytuł filmu" />
-                                                      <Label text="Czas trwania" GridPane.rowIndex="1" />
-                                                      <Label text="Ocena" GridPane.rowIndex="2" />
-                                                      <Label text="Opis filmu" GridPane.rowIndex="3" />
-                                                      <Label text="Gatunek filmu" GridPane.rowIndex="4" />
-                                                      <Label text="Cena biletu" GridPane.rowIndex="5" />
-                                                      <TextField fx:id="movieTitleInput" styleClass="inputTextField" GridPane.columnIndex="1" />
-                                                      <ChoiceBox fx:id="movieGenreInput" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                                      <TextField fx:id="movieLengthInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <TextField fx:id="movieScoreInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <TextField fx:id="moviePriceInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                                      <TextArea fx:id="movieDescInput" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <styleClass>
-                                                            <String fx:value="arrow" />
-                                                            <String fx:value="label" />
-                                                         </styleClass>
-                                                         <opaqueInsets>
-                                                            <Insets />
-                                                         </opaqueInsets>
-                                                      </TextArea>
-                                                   </children>
-                                                </GridPane>
-                                                <GridPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints maxHeight="317.0" minHeight="10.0" prefHeight="313.0" vgrow="SOMETIMES" />
-                                                    <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="movieCoverButton" minHeight="28.0" minWidth="137.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="137.0" text="Wybierz okładkę" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <ImageView fx:id="coverAddMovie" disable="true" fitHeight="276.0" fitWidth="175.0" preserveRatio="true" smooth="false" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                         <GridPane.margin>
-                                                            <Insets />
-                                                         </GridPane.margin>
-                                                         <viewport>
-                                                            <Rectangle2D />
-                                                         </viewport>
-                                                         <image>
-                                                            <Image url="@icons/image_default.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                </GridPane>
+                                                <Label text="Tytuł filmu" />
+                                                <Label text="Czas trwania" GridPane.rowIndex="1" />
+                                                <Label text="Ocena" GridPane.rowIndex="2" />
+                                                <Label text="Opis filmu" GridPane.rowIndex="3" />
+                                                <Label text="Gatunek filmu" GridPane.rowIndex="4" />
+                                                <Label text="Cena biletu" GridPane.rowIndex="6" />
+                                                <TextField fx:id="movieTitleInput" styleClass="inputTextField" GridPane.columnIndex="1" />
+                                                <ChoiceBox fx:id="movieGenreInput" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <TextField fx:id="movieLengthInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="movieScoreInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="moviePriceInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <TextArea fx:id="movieDescInput" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <cursor>
+                                                      <Cursor fx:constant="TEXT" />
+                                                   </cursor>
+                                                   <styleClass>
+                                                      <String fx:value="arrow" />
+                                                      <String fx:value="label" />
+                                                   </styleClass>
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </TextArea>
+                                                <TextField fx:id="movieCoverInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="Okładka" GridPane.rowIndex="5" />
                                              </children>
                                           </GridPane>
                                           <GridPane hgap="20.0" prefHeight="30.0" prefWidth="260.0">
@@ -191,89 +159,49 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="518.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff08; -fx-background-radius: 10;">
                                        <children>
-                                          <Text boundsType="LOGICAL_VERTICAL_CENTER" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj film z bazy danych" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="491.60699462890625">
-                                             <styleClass>
-                                                <String fx:value="h1" />
-                                                <String fx:value="text" />
-                                             </styleClass>
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </Text>
-                                          <GridPane hgap="20.0" prefHeight="377.0" prefWidth="560.0">
+                                          <GridPane prefHeight="422.0" prefWidth="555.0">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="372.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="168.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="83.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.0" minWidth="10.0" prefWidth="286.0" />
                                              </columnConstraints>
                                              <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <GridPane prefHeight="375.0" prefWidth="600.0">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="83.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.0" minWidth="10.0" prefWidth="286.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Label text="Wybierz film" />
-                                                      <Label text="Czas trwania" GridPane.rowIndex="2" />
-                                                      <Label text="Ocena" GridPane.rowIndex="3" />
-                                                      <Label text="Opis filmu" GridPane.rowIndex="4" />
-                                                      <Label text="Gatunek filmu" GridPane.rowIndex="5" />
-                                                      <Label text="Cena biletu" GridPane.rowIndex="6" />
-                                                      <ChoiceBox fx:id="editMovieGenreInput" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                                      <TextField fx:id="editMovieLengthInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <TextField fx:id="editMovieScoreInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                      <TextField fx:id="editMoviePriceInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                                      <ChoiceBox fx:id="editMovieList" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" />
-                                                      <TextArea fx:id="editMovieDescInput" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                                         <cursor>
-                                                            <Cursor fx:constant="TEXT" />
-                                                         </cursor>
-                                                         <styleClass>
-                                                            <String fx:value="arrow" />
-                                                            <String fx:value="label" />
-                                                         </styleClass>
-                                                         <opaqueInsets>
-                                                            <Insets />
-                                                         </opaqueInsets>
-                                                      </TextArea>
-                                                      <Label text="Tytuł filmu" GridPane.rowIndex="1" />
-                                                      <TextField fx:id="editMovieTitleInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                   </children>
-                                                </GridPane>
-                                                <GridPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints maxHeight="317.0" minHeight="10.0" prefHeight="313.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="editMovieCoverButton" minHeight="28.0" minWidth="137.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="137.0" text="Zmień okładkę" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <ImageView fx:id="coverEditMovie" disable="true" fitHeight="276.0" fitWidth="175.0" preserveRatio="true" smooth="false" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                         <GridPane.margin>
-                                                            <Insets />
-                                                         </GridPane.margin>
-                                                         <viewport>
-                                                            <Rectangle2D />
-                                                         </viewport>
-                                                         <image>
-                                                            <Image url="@icons/image_default.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                </GridPane>
+                                                <Label text="Wybierz film" />
+                                                <Label text="Czas trwania" GridPane.rowIndex="2" />
+                                                <Label text="Ocena" GridPane.rowIndex="3" />
+                                                <Label text="Opis filmu" GridPane.rowIndex="4" />
+                                                <Label text="Gatunek filmu" GridPane.rowIndex="5" />
+                                                <Label text="Cena biletu" GridPane.rowIndex="7" />
+                                                <ChoiceBox fx:id="editMovieGenreInput" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="editMovieLengthInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="editMovieScoreInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="editMoviePriceInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <ChoiceBox fx:id="editMovieList" prefHeight="23.0" prefWidth="397.0" GridPane.columnIndex="1" />
+                                                <TextArea fx:id="editMovieDescInput" prefHeight="34.0" prefWidth="379.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <cursor>
+                                                      <Cursor fx:constant="TEXT" />
+                                                   </cursor>
+                                                   <styleClass>
+                                                      <String fx:value="arrow" />
+                                                      <String fx:value="label" />
+                                                   </styleClass>
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </TextArea>
+                                                <Label text="Tytuł filmu" GridPane.rowIndex="1" />
+                                                <TextField fx:id="editMovieTitleInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Okładka" GridPane.rowIndex="6" />
+                                                <TextField fx:id="editMovieCoverInput" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                              </children>
                                           </GridPane>
                                           <GridPane hgap="20.0" prefHeight="30.0" prefWidth="260.0">

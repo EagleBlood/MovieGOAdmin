@@ -3,6 +3,7 @@ module org.example {
     requires javafx.fxml;
     requires java.sql;
     requires java.desktop;
+    requires org.apache.commons.net;
 
     opens org.example to javafx.fxml;
     exports org.example;
