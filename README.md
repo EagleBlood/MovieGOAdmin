@@ -5,10 +5,9 @@
 The main goal of the project is to create an IT system for a new cinema. The administrator will receive access to certain data stored in the cinema's database, including the ability to view/add/edit/delete movies and screenings, remove users from the database, and view the purchase history made by cinema customers.
 
 With these improvements for cinema staff, the owner of the new cinema will be able to manage it better and more efficiently by monitoring sales, changing ticket prices, and improving infrastructure.
-<br>
-<br>
 
-
+> [!IMPORTANT]
+> Its crusial to simultaneously run [MovieGOApi](https://github.com/EagleBlood/MovieGOApi) server to sucessfully change data in DB.
 
 ## Functionality
 
@@ -73,10 +72,6 @@ Transactions tab:<br>
 - Make sure you have Java installed on your computer.
 - Clone the project repository from GitHub to a local directory on your computer.
 - Run the program in your chosen JDK environment.
-<br>
-<br>
-
-
 
 ## Tools and libraries
 * Maven
