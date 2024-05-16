@@ -11,14 +11,14 @@ Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie
 
 By połączyć się z bazą kina musisz zalogować się do bazy danych poprzez menu logowania.<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/1.PNG" alt="Ekran logowania" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/1.PNG" alt="Ekran logowania" />
 </p>
 <br>
 
 
 Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/2.PNG" alt="Menu główne" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/2.PNG" alt="Menu główne" />
 </p>
 <br>
 
@@ -26,12 +26,12 @@ Po udanym logowaniu możemy rozpocząć zarządzanie kinem.<br>
 Zakładka filmy:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/3.PNG" alt="Zakładka do wyświetlania filmów"/></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/4.PNG" alt="Zakładka do dodawania nowego filmu"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/3.PNG" alt="Zakładka do wyświetlania filmów"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/4.PNG" alt="Zakładka do dodawania nowego filmu"/></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/5.PNG" alt="Ekran edycji istniejącego filmu" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/6.PNG" alt="Zakładka do usuwania filmów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/5.PNG" alt="Ekran edycji istniejącego filmu" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/6.PNG" alt="Zakładka do usuwania filmów" /></td>
   </tr>
 </table>
 <br>
@@ -40,12 +40,12 @@ Zakładka filmy:<br>
 Zakładka seanse:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/7.PNG" alt="Zakładka do wyświetlania seansów" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/8.PNG" alt="Zakładka do dodawania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/7.PNG" alt="Zakładka do wyświetlania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/8.PNG" alt="Zakładka do dodawania seansów" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/9.PNG" alt="Ekran edycji seansów" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/10.PNG" alt="Zakładka do usuwania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/9.PNG" alt="Ekran edycji seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/10.PNG" alt="Zakładka do usuwania seansów" /></td>
   </tr>
 </table>
 <br>
@@ -53,14 +53,14 @@ Zakładka seanse:<br>
 
 Zakładka usuń użytkownika:<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/11.PNG" alt="Ekran do usuwania użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/11.PNG" alt="Ekran do usuwania użytkowników" />
 </p>
 <br>
 
 
 Zakładka transakcje:<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
 </p>
 
 ## Instalacja
