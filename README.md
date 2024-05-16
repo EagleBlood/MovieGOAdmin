@@ -14,14 +14,14 @@ With these improvements for cinema staff, the owner of the new cinema will be ab
 
 To connect to the cinema database, you need to log in to the database through the login menu.<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/1.PNG" alt="Ekran logowania" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/1.PNG" alt="Ekran logowania" />
 </p>
 <br>
 
 
 After successful login, we can begin managing the cinema.<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/2.PNG" alt="Menu główne" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/2.PNG" alt="Menu główne" />
 </p>
 <br>
 
@@ -29,12 +29,12 @@ After successful login, we can begin managing the cinema.<br>
 Movie section:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/3.PNG" alt="Zakładka do wyświetlania filmów"/></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/4.PNG" alt="Zakładka do dodawania nowego filmu"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/3.PNG" alt="Zakładka do wyświetlania filmów"/></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/4.PNG" alt="Zakładka do dodawania nowego filmu"/></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/5.PNG" alt="Ekran edycji istniejącego filmu" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/6.PNG" alt="Zakładka do usuwania filmów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/5.PNG" alt="Ekran edycji istniejącego filmu" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/6.PNG" alt="Zakładka do usuwania filmów" /></td>
   </tr>
 </table>
 <br>
@@ -43,31 +43,27 @@ Movie section:<br>
 Screenings section:<br>
 <table>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/7.PNG" alt="Zakładka do wyświetlania seansów" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/8.PNG" alt="Zakładka do dodawania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/7.PNG" alt="Zakładka do wyświetlania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/8.PNG" alt="Zakładka do dodawania seansów" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/9.PNG" alt="Ekran edycji seansów" /></td>
-    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/10.PNG" alt="Zakładka do usuwania seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/9.PNG" alt="Ekran edycji seansów" /></td>
+    <td align="center"><img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/10.PNG" alt="Zakładka do usuwania seansów" /></td>
   </tr>
 </table>
 <br>
 
 Remove user section:<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/11.PNG" alt="Ekran do usuwania użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/11.PNG" alt="Ekran do usuwania użytkowników" />
 </p>
 <br>
 
 
 Transactions tab:<br>
 <p align="center">
-  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
+  <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main-android/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
 </p>
-<br>
-<br>
-
-
 
 ## Installation
 - Make sure you have Java installed on your computer.
