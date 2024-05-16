@@ -8,6 +8,7 @@ With these improvements for cinema staff, the owner of the new cinema will be ab
 
 > [!IMPORTANT]
 > Its crusial to simultaneously run [MovieGOApi](https://github.com/EagleBlood/MovieGOApi) server to sucessfully change data in DB.
+> For version that works **ONLY** for [MovieGONative](https://github.com/EagleBlood/MovieGONative) you need to switch to [```main-reactNative```](https://github.com/EagleBlood/MovieGOAdmin/tree/main-reactNative) branch. Don't forget to also use correct version of API as failing to do so may cause unexpected errors.
 
 ## Functionality
 
