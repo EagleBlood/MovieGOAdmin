@@ -2,10 +2,10 @@
 Głównym celem projektu jest stworzenie systemu informatycznego dla nowego kina. Administrator otrzyma dostęp do pewnych danych zawartych w bazie danych kina, między innymi będzie mógł wyświetlać/dodawać/edytować/usuwać filmy jak i seanse, usuwać użytkowników z bazy oraz wyświetlać historie zakupów dokonanych przez klientów kina.
 
 Dzięki tym ułatwieniom dla pracowników kina, właściciel nowego kina będzie mógł lepiej i efektywniej nim zarządzać poprzez monitorowanie sprzedaży, zmianę ceny biletów czy ulepszanie infrastruktury.
-<br>
-<br>
 
-
+>[!Important]
+> Niezbędne jest jednoczesne uruchomienie serwera MovieGOApi, aby skutecznie zmienić dane w bazie.
+> Dla wersji działającej TYLKO dla [MovieGONative](https://github.com/EagleBlood/MovieGONative) musisz przełączyć się na gałąź [```main-reactNative```](https://github.com/EagleBlood/MovieGOAdmin/tree/main-reactNative). Nie zapomnij również użyć poprawnej wersji API, ponieważ niezastosowanie się do tego może powodować nieoczekiwane błędy.
 
 ## Funkcjonalność
 
@@ -62,19 +62,11 @@ Zakładka transakcje:<br>
 <p align="center">
   <img src="https://github.com/EagleBlood/MovieGOAdmin/blob/main/imgs/12.PNG" alt="Ekran do wyświetlania transkacji użytkowników" />
 </p>
-<br>
-<br>
-
-
 
 ## Instalacja
 - Upewnij się, że masz zainstalowaną Javę na swoim komputerze.
 - Sklonuj repozytorium projektu z GitHuba do lokalnego katalogu na swoim komputerze.
 - Uruchom program w wybranym środowkisku JDK
-<br>
-<br>
-
-
 
 ## Narzędzia oraz biblioteki
 * Maven
